@@ -46,7 +46,9 @@ public class MainActivity extends AppCompatActivity {
         if(!savepoint.equalsIgnoreCase("no")) {
             Button btnLoad = new Button(this);
             btnLoad.setText("Load Savepoint");
-            btnLoad.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+            RelativeLayout.LayoutParams pl = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            pl.setMargins(0,50,0,0);
+            btnLoad.setLayoutParams(pl);
             btnLoad.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

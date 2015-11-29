@@ -198,7 +198,7 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.fab1:
                 //navigate to home activity
-                exitTransition(MainActivity.class);
+                exitTransition(MainActivity.class,0);
                 break;
             case R.id.fab2:
                 //show group member
@@ -399,7 +399,7 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
             }
         };
 
-        exitTransition(cls);
+        exitTransition(cls,2000);
     }
 
     protected void getAllImageButtons(ViewGroup v) {
@@ -571,7 +571,7 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    protected void exitTransition(Class cls) {
+    protected void exitTransition(Class cls, long offsetDuration) {
         final Class c = cls;
         final RelativeLayout ll = (RelativeLayout) findViewById(R.id.topLayout);
 
@@ -591,7 +591,7 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onAnimationRepeat(Animation animation) {}
         });
-        b.setStartOffset(2000);
+        b.setStartOffset(offsetDuration);
 
         ll.startAnimation(b);
     }

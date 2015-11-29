@@ -66,7 +66,7 @@
         app:elevation="6dp"
         app:backgroundTint="#4590ff"
         app:pressedTranslationZ="12dp"
-        android:src="@android:drawable/ic_menu_help" />
+        android:src="@drawable/ic_home_white_24dp" />
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
@@ -76,6 +76,6 @@
         app:backgroundTint="@color/colorFAB1"
         app:pressedTranslationZ="12dp"
         android:layout_margin="@dimen/fab_margin"
-        android:src="@drawable/ic_home_white_24dp" />
+        android:src="@android:drawable/ic_dialog_dialer" />
 
 </android.support.design.widget.CoordinatorLayout>
