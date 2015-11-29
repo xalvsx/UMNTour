@@ -18,7 +18,7 @@
         app:backgroundTint="#4590ff"
         app:elevation="6dp"
         app:pressedTranslationZ="12dp"
-        android:src="@android:drawable/ic_dialog_map" />
+        android:src="@drawable/ic_navigation_white_24dp" />
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab4"
         android:layout_width="wrap_content"
@@ -42,7 +42,7 @@
         app:backgroundTint="#4590ff"
         app:elevation="6dp"
         app:pressedTranslationZ="12dp"
-        android:src="@android:drawable/ic_dialog_info" />
+        android:src="@drawable/ic_info_outline_white_24dp" />
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab2"
         android:layout_width="wrap_content"
@@ -54,7 +54,7 @@
         app:backgroundTint="#4590ff"
         app:elevation="6dp"
         app:pressedTranslationZ="12dp"
-        android:src="@android:drawable/btn_dialog" />
+        android:src="@drawable/ic_group_white_24dp" />
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab1"
         android:layout_width="wrap_content"
@@ -76,6 +76,6 @@
         app:backgroundTint="@color/colorFAB1"
         app:pressedTranslationZ="12dp"
         android:layout_margin="@dimen/fab_margin"
-        android:src="@android:drawable/ic_dialog_dialer" />
+        android:src="@drawable/ic_menu_white_24dp" />
 
 </android.support.design.widget.CoordinatorLayout>
