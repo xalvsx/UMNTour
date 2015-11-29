@@ -1,5 +1,6 @@
 package com.umn.mobile.umntour;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -44,11 +46,17 @@ public class MainActivity extends AppCompatActivity {
         if(!savepoint.equalsIgnoreCase("no")) {
             Button btnLoad = new Button(this);
             btnLoad.setText("Load Savepoint");
+            btnLoad.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
             btnLoad.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     try {
                         exitTransition(Class.forName(savepoint));
+                        ProgressDialog p = new ProgressDialog(MainActivity.this);
+                        p.setIndeterminate(false);
+                        p.setCancelable(false);
+                        p.setMessage("Loading...");
+                        p.show();
                     } catch (ClassNotFoundException e) {
                         e.printStackTrace();
                         Toast.makeText(MainActivity.this, "An error occured.", Toast.LENGTH_SHORT).show();
@@ -83,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
             public void onAnimationRepeat(Animation animation) {
             }
         });
+        b.setStartOffset(500);
 
         ll.startAnimation(b);
     }

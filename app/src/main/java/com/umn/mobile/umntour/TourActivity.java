@@ -40,7 +40,7 @@ import java.util.List;
 
 public class TourActivity extends AppCompatActivity implements View.OnClickListener {
 
-    protected List<ImageButton> mButtons = new ArrayList();
+    protected List<ImageButton> mButtons = new ArrayList<ImageButton>();
     protected Boolean isFabOpen = false;
     protected FloatingActionButton fab,fab1,fab2,fab3,fab4,fab5;
     protected Animation fab_open1,fab_open2,fab_open3,fab_open4,fab_open5,fab_close,rotate_forward,rotate_backward;
@@ -198,6 +198,7 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.fab1:
                 //navigate to home activity
+                exitTransition(MainActivity.class);
                 break;
             case R.id.fab2:
                 //show group member
