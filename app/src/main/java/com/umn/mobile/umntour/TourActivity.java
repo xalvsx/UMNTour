@@ -264,7 +264,7 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
                                     final ImageView iv = (ImageView)findViewById(R.id.bgImage);
                                     iv.clearAnimation();
                                     if(isTouring) {
-                                        showButton();
+                                        //showButton();
                                         Snackbar snack = Snackbar.make(iv, "Tour stopped..", Snackbar.LENGTH_SHORT);
                                         ViewGroup group = (ViewGroup) snack.getView();
                                         group.setAlpha(0.9f);
@@ -495,16 +495,22 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onAnimationEnd(Animation animation) {
                 showButton();
-                showTourDetail(iv,"Enjoy your view :)");
+                if (isTouring) {
+                    Snackbar snack = Snackbar.make(iv, "Enjoy your view :)", Snackbar.LENGTH_LONG);
+                    ViewGroup group = (ViewGroup) snack.getView();
+                    group.setAlpha(0.9f);
+                    group.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), android.R.color.holo_blue_light));
+                    snack.show();
+                }
             }
 
             @Override
-            public void onAnimationRepeat(Animation animation) {}
+            public void onAnimationRepeat(Animation animation) {
+            }
         });
 
 
         iv.startAnimation(animationSet);
-
     }
 
     protected void showButton()
