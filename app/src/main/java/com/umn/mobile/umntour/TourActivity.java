@@ -594,6 +594,61 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
         snack.show();
     }
 
+    protected void showOtherWayDetail(String titleText, String contentText) {
+        LinearLayout lay = new LinearLayout(getApplicationContext());
+        LinearLayout.LayoutParams p = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        p.setMargins(50, 50, 50, 50);
+        lay.setLayoutParams(p);
+        lay.setGravity(Gravity.CENTER);
+        lay.setOrientation(LinearLayout.VERTICAL);
+
+        LinearLayout.LayoutParams ttl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+
+        TextView title = new TextView(getApplicationContext());
+        title.setText("\u26A0" + titleText);
+        title.setGravity(Gravity.CENTER);
+        title.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+        title.setTextSize(26f);
+        ttl.setMargins(0, 0, 0, 25);
+        title.setLayoutParams(ttl);
+        title.setTextColor(ContextCompat.getColor(getApplicationContext(), android.R.color.holo_blue_dark));
+        lay.addView(title);
+
+        TextView content = new TextView(getApplicationContext());
+        content.setText(contentText);
+        content.setTextSize(20f);
+        content.setLayoutParams(ttl);
+        content.setTextColor(ContextCompat.getColor(getApplicationContext(), android.R.color.black));
+        lay.addView(content);
+        Button btnOk = new Button(getApplicationContext());
+        btnOk.setText("OK");
+        lay.addView(btnOk);
+
+        final DialogPlus dialog = DialogPlus.newDialog(this)
+                .setOnItemClickListener(new OnItemClickListener() {
+                    @Override
+                    public void onItemClick(DialogPlus dialog, Object item, View view, int position) {
+                    }
+                })
+                .setContentHolder(new ViewHolder(lay))
+                .setInAnimation(R.anim.fadein)
+                .setOutAnimation(R.anim.fade)
+                .setGravity(Gravity.CENTER)
+                .setCancelable(true)
+                .setContentHeight(ViewGroup.LayoutParams.WRAP_CONTENT)
+                .setContentWidth(ViewGroup.LayoutParams.WRAP_CONTENT)
+                .setPadding(25, 25, 25, 25)
+                .create();
+        dialog.show();
+
+        btnOk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+    }
+
     protected void enterTransition() {
         if(flagEnter) {
             final RelativeLayout ll = (RelativeLayout) findViewById(R.id.topLayout);

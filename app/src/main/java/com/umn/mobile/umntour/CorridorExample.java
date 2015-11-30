@@ -55,7 +55,7 @@ public class CorridorExample extends TourActivity {
 
         //code untuk bikin button programmatically
         ImageButton btnToRoomExample2 = new ImageButton(this);
-        btnToRoomExample2.setBackgroundResource(android.R.drawable.ic_dialog_map);
+        btnToRoomExample2.setBackgroundResource(android.R.drawable.ic_dialog_alert);
         RelativeLayout.LayoutParams lp2 = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         lp2.addRule(RelativeLayout.ALIGN_PARENT_START);
         lp2.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
@@ -70,7 +70,7 @@ public class CorridorExample extends TourActivity {
         btnToRoomExample2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                zoomToThis(v, CorridorExample.class);
+                showOtherWayDetail("The 'A' Building","This is the way to the 'A' building, where the lecturers, staff, and academic services be held!");
             }
         });
         //end code button programmatically
