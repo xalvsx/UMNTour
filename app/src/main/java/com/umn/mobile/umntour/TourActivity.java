@@ -188,6 +188,45 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
         });
     }
 
+    protected void showGroup() {
+        LinearLayout lay = new LinearLayout(getApplicationContext());
+        LinearLayout.LayoutParams p = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        p.setMargins(50, 50, 50, 50);
+        lay.setLayoutParams(p);
+        lay.setGravity(Gravity.CENTER);
+        lay.setOrientation(LinearLayout.VERTICAL);
+
+        LinearLayout.LayoutParams ttl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+
+        ImageView ivGroup = new ImageView(this);
+        ivGroup.setImageResource(R.drawable.umntour);
+        lay.addView(ivGroup);
+
+        final DialogPlus dialog = DialogPlus.newDialog(this)
+                .setOnItemClickListener(new OnItemClickListener() {
+                    @Override
+                    public void onItemClick(DialogPlus dialog, Object item, View view, int position) {
+                    }
+                })
+                .setContentHolder(new ViewHolder(lay))
+                .setInAnimation(R.anim.group_dialog_in)
+                .setOutAnimation(R.anim.group_dialog_out)
+                .setGravity(Gravity.CENTER)
+                .setCancelable(true)
+                .setContentHeight(ViewGroup.LayoutParams.WRAP_CONTENT)
+                .setContentWidth(ViewGroup.LayoutParams.WRAP_CONTENT)
+                .setPadding(25, 25, 25, 25)
+                .create();
+        dialog.show();
+
+        ivGroup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+    }
+
     @Override
     public void onClick(View v) {
         final View v2 = v;
@@ -202,6 +241,7 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.fab2:
                 //show group member
+                showGroup();
                 break;
             case R.id.fab3:
                 showDetail();

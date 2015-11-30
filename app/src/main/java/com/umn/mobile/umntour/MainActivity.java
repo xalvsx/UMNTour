@@ -1,14 +1,18 @@
 package com.umn.mobile.umntour;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,8 +21,14 @@ import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
+
+import com.orhanobut.dialogplus.DialogPlus;
+import com.orhanobut.dialogplus.OnItemClickListener;
+import com.orhanobut.dialogplus.ViewHolder;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,23 +42,63 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+
+        Button btnStart = (Button)findViewById(R.id.btnStart);
+        btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 exitTransition(CorridorExample.class);
             }
         });
 
-        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        LinearLayout lay = new LinearLayout(getApplicationContext());
+        LinearLayout.LayoutParams p = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        p.setMargins(50, 50, 50, 50);
+        lay.setLayoutParams(p);
+        lay.setGravity(Gravity.CENTER);
+        lay.setOrientation(LinearLayout.VERTICAL);
+
+        LinearLayout.LayoutParams ttl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+
+        ImageView ivGroup = new ImageView(this);
+        ivGroup.setImageResource(R.drawable.wallpaper);
+        lay.addView(ivGroup);
+
+        final DialogPlus dialog = DialogPlus.newDialog(this)
+                .setOnItemClickListener(new OnItemClickListener() {
+                    @Override
+                    public void onItemClick(DialogPlus dialog, Object item, View view, int position) {
+                    }
+                })
+                .setContentHolder(new ViewHolder(lay))
+                .setInAnimation(R.anim.about_dialog_in)
+                .setOutAnimation(R.anim.about_dialog_out)
+                .setGravity(Gravity.CENTER)
+                .setCancelable(true)
+                .setContentHeight(ViewGroup.LayoutParams.WRAP_CONTENT)
+                .setContentWidth(ViewGroup.LayoutParams.WRAP_CONTENT)
+                .setPadding(25, 25, 25, 25)
+                .create();
+
+        ivGroup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        Button btnAbout = (Button)findViewById(R.id.btnAbout);
+        btnAbout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.show();
+            }
+        });
 
         final String savepoint = sharedPreferences.getString("Savepoint","no");
+        Button btnLoad = (Button)findViewById(R.id.btnLoad);
         if(!savepoint.equalsIgnoreCase("no")) {
-            Button btnLoad = new Button(this);
-            btnLoad.setText("Load Savepoint");
-            RelativeLayout.LayoutParams pl = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-            pl.setMargins(0,50,0,0);
-            btnLoad.setLayoutParams(pl);
             btnLoad.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -65,8 +115,44 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             });
-            ((RelativeLayout)findViewById(R.id.layout)).addView(btnLoad);
         }
+        else {
+            btnLoad.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Snackbar snack = Snackbar.make(v, "You don't have a savepoint. Start touring and save one!", Snackbar.LENGTH_SHORT);
+                    ViewGroup group = (ViewGroup) snack.getView();
+                    group.setAlpha(0.9f);
+                    group.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), android.R.color.holo_blue_light));
+                    snack.show();
+                }
+            });
+        }
+
+        Button btnExit = (Button)findViewById(R.id.btnExit);
+        btnExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setTitle("Exit?")
+                        .setMessage("Do you want to exit?")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                finish();
+                                dialog.dismiss();
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
+        });
     }
 
     protected void exitTransition(Class cls) {
