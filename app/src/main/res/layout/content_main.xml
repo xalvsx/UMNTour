@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/btnLoad"
         android:background="@drawable/load_savepoint"
-        android:layout_marginEnd="74dp"
+        android:layout_marginEnd="95dp"
         android:layout_above="@+id/btnExit"
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="20dp" />
@@ -31,9 +31,8 @@
         android:layout_height="wrap_content"
         android:background="@drawable/about"
         android:id="@+id/btnAbout"
-        android:layout_marginEnd="84dp"
-        android:layout_alignTop="@+id/btnExit"
-        android:layout_toStartOf="@+id/btnExit" />
+        android:layout_marginStart="95dp"
+        android:layout_alignTop="@+id/btnExit" />
 
     <ImageButton
         android:layout_width="wrap_content"
