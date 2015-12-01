@@ -77,11 +77,16 @@
         <activity
             android:name=".Toilet3"
             android:screenOrientation="landscape" />
-        <activity android:name=".Corridor3Right3" />
-        <activity android:name=".ServerBridge" />
-        <activity android:name=".Bridge" />
-        <activity android:name=".EmergencyExit" />
-        <activity android:name=".EmergencyExitDetail"></activity>
+        <activity android:name=".Corridor3Right3"
+            android:screenOrientation="landscape" />
+        <activity android:name=".ServerBridge"
+            android:screenOrientation="landscape" />
+        <activity android:name=".Bridge"
+            android:screenOrientation="landscape" />
+        <activity android:name=".EmergencyExit"
+            android:screenOrientation="landscape" />
+        <activity android:name=".EmergencyExitDetail"
+            android:screenOrientation="landscape"></activity>
     </application>
 
 </manifest>

@@ -28,18 +28,18 @@ public class Bridge extends TourActivity {
         setActivityDetail("Corridor 3 Right 2", "Corridor 3 Right 2 is a second right side of Building B Floor 3 Corridor.");
 
         ImageButton btnToBack = new ImageButton(this);
-        btnToBack.setBackgroundResource(R.drawable.arrow_left);
+        btnToBack.setBackgroundResource(R.drawable.arrow_down);
         RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        lp.addRule(RelativeLayout.CENTER_VERTICAL);
+        lp.addRule(RelativeLayout.CENTER_HORIZONTAL);
         lp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
         btnToBack.setLayoutParams(lp);
         layout.addView(btnToBack);
         btnToBack.setId(View.generateViewId());
-        details.put(btnToBack.getId(), "This is the way to the Room B315.");
+        btnBack = btnToBack;
         btnToBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                zoomToThis(v, ServerBridge.class);
+                zoomOutFade(v, ServerBridge.class);
             }
         });
 

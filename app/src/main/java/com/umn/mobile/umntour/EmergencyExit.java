@@ -59,11 +59,11 @@ public class EmergencyExit extends TourActivity {
         //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
         //komen diatas itu contoh batas panjang kata2nya
         btnToBack.setId(View.generateViewId());
-        details.put(btnToBack.getId(), "This is the way to go to the Corridor 3 Left 1.");
+        btnBack = btnToBack;
         btnToBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                zoomToThis(v, ServerBridge.class);
+                zoomOutFade(v, ServerBridge.class);
             }
         });
         //end code button programmatically
