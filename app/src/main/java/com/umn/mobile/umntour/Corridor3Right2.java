@@ -51,6 +51,24 @@ public class Corridor3Right2 extends TourActivity {
         });
         //end code button programmatically
 
+        ImageButton btnToCorridor3Right3 = new ImageButton(this);
+        btnToCorridor3Right3.setBackgroundResource(R.drawable.arrow_up);
+        RelativeLayout.LayoutParams lp4 = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        lp4.addRule(RelativeLayout.ALIGN_PARENT_START);
+        lp4.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+        lp4.setMarginStart(getdp(135));
+        lp4.setMargins(0,0,0,getdp(97));
+        btnToCorridor3Right3.setLayoutParams(lp4);
+        layout.addView(btnToCorridor3Right3);
+        btnToCorridor3Right3.setId(View.generateViewId());
+        details.put(btnToCorridor3Right3.getId(), "This is the way to the Room B315.");
+        btnToCorridor3Right3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                zoomToThis(v, Corridor3Right3.class);
+            }
+        });
+
         if(isDay) {
             ImageButton btnToB315 = new ImageButton(this);
             btnToB315.setBackgroundResource(R.drawable.arrow_right);
@@ -68,6 +86,8 @@ public class Corridor3Right2 extends TourActivity {
                     zoomToThis(v, RoomB315.class);
                 }
             });
+
+
         }
 
 

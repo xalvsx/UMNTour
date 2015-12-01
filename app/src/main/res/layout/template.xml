@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@drawable/selasar3_kanan2">
+    android:background="@drawable/tangga_darurat">
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageButton"
         android:background="@drawable/arrow_left"
-        android:layout_marginEnd="157dp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="124dp" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="111dp" />
 </RelativeLayout>
