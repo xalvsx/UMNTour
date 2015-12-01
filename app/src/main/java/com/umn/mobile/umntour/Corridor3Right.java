@@ -52,7 +52,7 @@ public class Corridor3Right extends TourActivity {
         }
 
         ImageButton btnToCorridor3Right1 = new ImageButton(this);
-        btnToCorridor3Right1.setBackgroundResource(R.drawable.arrow_right);
+        btnToCorridor3Right1.setBackgroundResource(R.drawable.arrow_up);
         RelativeLayout.LayoutParams lp2 = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         lp2.addRule(RelativeLayout.ALIGN_PARENT_END);
         lp2.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
@@ -90,18 +90,18 @@ public class Corridor3Right extends TourActivity {
 
         //code untuk bikin button programmatically
         ImageButton btnToLantai3 = new ImageButton(this);
-        btnToLantai3.setBackgroundResource(R.drawable.arrow_right);
+        btnToLantai3.setBackgroundResource(R.drawable.arrow_down);
         RelativeLayout.LayoutParams lp1 = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         lp1.addRule(RelativeLayout.CENTER_HORIZONTAL);
         lp1.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
         btnToLantai3.setLayoutParams(lp1);
         layout.addView(btnToLantai3);
         btnToLantai3.setId(View.generateViewId());
-        details.put(btnToLantai3.getId(), "This is the way to go to the Corridor Example. Corridor Example links many other rooms.");
+        details.put(btnToLantai3.getId(), "This is the way to go to the Floor 3.");
         btnToLantai3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                zoomToThis(v, Corridor3Right.class);
+                zoomToThis(v, Lantai3.class);
             }
         });
         //end code button programmatically

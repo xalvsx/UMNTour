@@ -33,7 +33,7 @@ public class Corridor3Right2 extends TourActivity {
 
         //code untuk bikin button programmatically
         ImageButton btnToCorridor3Right1 = new ImageButton(this);
-        btnToCorridor3Right1.setBackgroundResource(R.drawable.arrow_right);
+        btnToCorridor3Right1.setBackgroundResource(R.drawable.arrow_down);
         RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         lp.addRule(RelativeLayout.CENTER_HORIZONTAL);
         lp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);

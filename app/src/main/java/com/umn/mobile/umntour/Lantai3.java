@@ -88,7 +88,7 @@ public class Lantai3 extends TourActivity {
             btnToCorridorlt3kiri.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    zoomToThis(v, Lantai3.class);
+                    zoomToThis(v, Corridor3left.class);
                 }
             });
             //end code button programmatically
@@ -110,14 +110,14 @@ public class Lantai3 extends TourActivity {
             btnToCorridorlt3kanan.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    zoomToThis(v, Lantai3.class);
+                    zoomToThis(v, Corridor3Right.class);
                 }
             });
             //end code button programmatically
 
             //code untuk bikin button programmatically
             ImageButton btnToCorridorToilet3 = new ImageButton(this);
-            btnToCorridorToilet3.setBackgroundResource(R.drawable.arrow_right);
+            btnToCorridorToilet3.setBackgroundResource(R.drawable.arrow_up);
             RelativeLayout.LayoutParams lptoilet3 = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             lptoilet3.addRule(RelativeLayout.ALIGN_PARENT_START);
             lptoilet3.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
@@ -197,7 +197,7 @@ public class Lantai3 extends TourActivity {
             btnToCorridorlt3kiri.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    zoomToThis(v, Lantai3.class);
+                    zoomToThis(v, Corridor3left.class);
                 }
             });
             //end code button programmatically
@@ -219,14 +219,14 @@ public class Lantai3 extends TourActivity {
             btnToCorridorlt3kanan.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    zoomToThis(v, Lantai3.class);
+                    zoomToThis(v, Corridor3Right.class);
                 }
             });
             //end code button programmatically
 
             //code untuk bikin button programmatically
             ImageButton btnToCorridorToilet3 = new ImageButton(this);
-            btnToCorridorToilet3.setBackgroundResource(R.drawable.arrow_right);
+            btnToCorridorToilet3.setBackgroundResource(R.drawable.arrow_up);
             RelativeLayout.LayoutParams lptoilet3 = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             lptoilet3.addRule(RelativeLayout.ALIGN_PARENT_START);
             lptoilet3.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);

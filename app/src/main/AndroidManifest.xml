@@ -39,6 +39,45 @@
         <activity
             android:name=".CorridorExample"
             android:screenOrientation="landscape" />
+        <activity
+            android:name=".Corridor3left"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Corridor3left1"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Corridor3left2"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Corridor3Right"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Corridor3Right1"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Corridor3Right2"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Lantai3"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".RoomB301"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".RoomB304"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".RoomB311"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".RoomB315"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".StudentLounge"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Toilet3"
+            android:screenOrientation="landscape" />
     </application>
 
 </manifest>

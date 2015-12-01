@@ -32,7 +32,7 @@ public class Corridor3Right1 extends TourActivity {
 
         //code untuk bikin button programmatically
         ImageButton btnToCorridor3Right = new ImageButton(this);
-        btnToCorridor3Right.setBackgroundResource(R.drawable.arrow_right);
+        btnToCorridor3Right.setBackgroundResource(R.drawable.arrow_down);
         RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         lp.addRule(RelativeLayout.CENTER_HORIZONTAL);
         lp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
@@ -50,7 +50,7 @@ public class Corridor3Right1 extends TourActivity {
 
         //code untuk bikin button programmatically
         ImageButton btnToStudentLounge = new ImageButton(this);
-        btnToStudentLounge.setBackgroundResource(R.drawable.arrow_right);
+        btnToStudentLounge.setBackgroundResource(R.drawable.arrow_up);
         RelativeLayout.LayoutParams lp2 = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         lp2.addRule(RelativeLayout.ALIGN_PARENT_TOP);
         lp2.addRule(RelativeLayout.ALIGN_PARENT_START);
@@ -70,7 +70,7 @@ public class Corridor3Right1 extends TourActivity {
 
         //code untuk bikin button programmatically
         ImageButton btnToCorridor3Right2 = new ImageButton(this);
-        btnToCorridor3Right2.setBackgroundResource(R.drawable.arrow_right);
+        btnToCorridor3Right2.setBackgroundResource(R.drawable.arrow_up);
         RelativeLayout.LayoutParams lp3 = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         lp3.addRule(RelativeLayout.ALIGN_PARENT_TOP);
         lp3.addRule(RelativeLayout.ALIGN_PARENT_END);
