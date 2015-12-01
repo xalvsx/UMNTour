@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 animateButton(v);
-                exitTransition(Lantai3.class);
+                exitTransition(Lantai2.class);
                 ProgressDialog p = new ProgressDialog(MainActivity.this);
                 p.setIndeterminate(false);
                 p.setCancelable(false);

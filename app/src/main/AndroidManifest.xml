@@ -39,6 +39,15 @@
             android:name=".CorridorExample"
             android:screenOrientation="landscape" />
         <activity
+            android:name=".Lantai2"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Corridor2Left"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Corridor2Left2"
+            android:screenOrientation="landscape" />
+        <activity
             android:name=".Corridor3left"
             android:screenOrientation="landscape" />
         <activity
