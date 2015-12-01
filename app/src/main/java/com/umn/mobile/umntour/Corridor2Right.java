@@ -113,6 +113,26 @@ public class Corridor2Right extends TourActivity {
         });
         //end code button programmatically
 
+        //code untuk bikin button programmatically
+        ImageButton btnToLantai2 = new ImageButton(this);
+        btnToLantai2.setBackgroundResource(R.drawable.arrow_down);
+        RelativeLayout.LayoutParams lp5 = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        lp5.addRule(RelativeLayout.CENTER_HORIZONTAL);
+        lp5.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+        btnToLantai2.setLayoutParams(lp5);
+        layout.addView(btnToLantai2);
+        //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
+        //komen diatas itu contoh batas panjang kata2nya
+        btnToLantai2.setId(View.generateViewId());
+        btnBack = btnToLantai2;
+        //details.put(btnToCorridor3Right.getId(), "This is the way to go to the Corridor 3 Right.");
+        btnToLantai2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                zoomOutFade(v, Lantai2.class);
+            }
+        });
+        //end code button programmatically
 
 
     }

@@ -142,7 +142,24 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 animateButton(v);
-                onBackPressed();
+                AlertDialog.Builder builder2 = new AlertDialog.Builder(MainActivity.this);
+                builder2.setTitle("Exit")
+                        .setMessage("Do you want to go exit the application?")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                finish();
+                                dialog.dismiss();
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog dialog2 = builder2.create();
+                dialog2.show();
             }
         });
     }
@@ -192,24 +209,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
-        builder2.setTitle("Exit")
-                .setMessage("Do you want to go exit the application?")
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        finish();
-                        dialog.dismiss();
-                    }
-                })
-                .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-        AlertDialog dialog2 = builder2.create();
-        dialog2.show();
+        ((ImageButton)findViewById(R.id.btnExit)).callOnClick();
     }
 
     @Override

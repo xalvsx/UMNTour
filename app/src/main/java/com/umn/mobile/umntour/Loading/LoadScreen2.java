@@ -13,7 +13,7 @@ public class LoadScreen2 extends LoadScreen1 {
         fadeInOffset = 0;
         fadeOutOffset = 1500;
         className = MainActivity.class.getName();
-        iv.setImageResource(R.drawable.umntour);
+        iv.setImageResource(R.drawable.splash2);
     }
 
     @Override
