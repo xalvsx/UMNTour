@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                exitTransition(CorridorExample.class);
+                exitTransition(Lantai2.class);
                 ProgressDialog p = new ProgressDialog(MainActivity.this);
                 p.setIndeterminate(false);
                 p.setCancelable(false);
