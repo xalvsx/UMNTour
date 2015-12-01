@@ -62,11 +62,11 @@ public class Corridor3left2 extends TourActivity {
         //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
         //komen diatas itu contoh batas panjang kata2nya
         btnToBackCorridor3Left1.setId(View.generateViewId());
-        details.put(btnToBackCorridor3Left1.getId(), "This is the way to go to the Corridor Example. Corridor Example links many other rooms.");
+        btnBack = btnToBackCorridor3Left1;
         btnToBackCorridor3Left1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                zoomToThis(v, Corridor3left1.class);
+                zoomOutFade(v, Corridor3left1.class);
             }
         });
         //end code button programmatically

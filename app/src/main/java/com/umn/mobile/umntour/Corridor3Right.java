@@ -97,11 +97,11 @@ public class Corridor3Right extends TourActivity {
         btnToLantai3.setLayoutParams(lp1);
         layout.addView(btnToLantai3);
         btnToLantai3.setId(View.generateViewId());
-        details.put(btnToLantai3.getId(), "This is the way to go to the Floor 3.");
+        btnBack = btnToLantai3;
         btnToLantai3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                zoomToThis(v, Lantai3.class);
+                zoomOutFade(v, Lantai3.class);
             }
         });
         //end code button programmatically

@@ -58,6 +58,8 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
 
     protected Snackbar activeSnackbar = null;
 
+    protected ImageView btnBack = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -462,6 +464,68 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
         exitTransition(cls,2000);
     }
 
+    protected void zoomOutFade(View v, Class cls) {
+        if(isFabOpen)
+        {
+            fab.callOnClick();
+        }
+        final ImageView iv = (ImageView)findViewById(R.id.bgImage);
+        float scaleX = 0.85f;
+        float scaleY = 0.85f;
+        float pX = iv.getWidth()/2;
+        float pY = iv.getHeight()/2;
+        long duration = 3000;
+
+        final Animation s = new ScaleAnimation(1,scaleX,1,scaleY,pX,pY);
+        s.setFillAfter(true);
+        s.setDuration(duration);
+        s.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {}
+            @Override
+            public void onAnimationEnd(Animation animation) {}
+            @Override
+            public void onAnimationRepeat(Animation animation) {}
+        });
+
+        //fade the button
+        Animation fade = AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.fade);
+        fade.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {}
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                Snackbar snack = Snackbar.make(iv, "Navigating...", Snackbar.LENGTH_SHORT);
+                ViewGroup group = (ViewGroup) snack.getView();
+                group.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), android.R.color.holo_blue_dark));
+                snack.show();
+                iv.startAnimation(s);
+            }
+            @Override
+            public void onAnimationRepeat(Animation animation) {}
+        });
+        v.startAnimation(fade);
+
+        for (ImageButton btn: mButtons) {
+            if(btn!=v) {
+                Animation f = AnimationUtils.loadAnimation(getApplicationContext(),
+                        R.anim.fade);
+                f.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {}
+                    @Override
+                    public void onAnimationEnd(Animation animation) {}
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {}
+                });
+                btn.startAnimation(f);
+            }
+        };
+
+        exitTransition(cls,2000);
+    }
+
     protected void getAllImageButtons(ViewGroup v) {
         for (int i = 0; i < v.getChildCount(); i++) {
             View child = v.getChildAt(i);
@@ -500,6 +564,8 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
                 public void onAnimationRepeat(Animation animation) {}
             });
             btn.startAnimation(f);
+
+            if(btn == btnBack) continue;
 
             float fromX = 1;
             float fromY = 1;

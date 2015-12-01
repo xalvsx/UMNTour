@@ -40,11 +40,11 @@ public class StudentLounge extends TourActivity {
         btnToCorridor3Right1.setLayoutParams(lp);
         layout.addView(btnToCorridor3Right1);
         btnToCorridor3Right1.setId(View.generateViewId());
-        details.put(btnToCorridor3Right1.getId(), "This is the way to go to the Corridor 3 Right 1.");
+        btnBack = btnToCorridor3Right1;
         btnToCorridor3Right1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                zoomToThis(v, Corridor3Right1.class);
+                zoomOutFade(v, Corridor3Right1.class);
             }
         });
         //end code button programmatically

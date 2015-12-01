@@ -36,11 +36,11 @@ public class RoomB301 extends TourActivity {
         //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
         //komen diatas itu contoh batas panjang kata2nya
         btnToBackCorridor3kiri2.setId(View.generateViewId());
-        details.put(btnToBackCorridor3kiri2.getId(), "This is the way to go to the Corridor 3 Left 2.");
+        btnBack = btnToBackCorridor3kiri2;
         btnToBackCorridor3kiri2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                zoomToThis(v, Corridor3left2.class);
+                zoomOutFade(v, Corridor3left2.class);
             }
         });
         //end code button programmatically
