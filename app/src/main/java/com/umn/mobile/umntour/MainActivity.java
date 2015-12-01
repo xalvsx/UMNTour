@@ -20,6 +20,7 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
-        Button btnStart = (Button)findViewById(R.id.btnStart);
+        ImageButton btnStart = (ImageButton)findViewById(R.id.btnStart);
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button btnAbout = (Button)findViewById(R.id.btnAbout);
+        ImageButton btnAbout = (ImageButton)findViewById(R.id.btnAbout);
         btnAbout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         final String savepoint = sharedPreferences.getString("Savepoint","no");
-        Button btnLoad = (Button)findViewById(R.id.btnLoad);
+        ImageButton btnLoad = (ImageButton)findViewById(R.id.btnLoad);
         if(!savepoint.equalsIgnoreCase("no")) {
             btnLoad.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -136,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
             });
         }
 
-        Button btnExit = (Button)findViewById(R.id.btnExit);
+        ImageButton btnExit = (ImageButton)findViewById(R.id.btnExit);
         btnExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

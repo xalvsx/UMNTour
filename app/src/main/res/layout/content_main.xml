@@ -8,39 +8,39 @@
     android:id="@+id/layout"
     android:background="@drawable/main">
 
-    <Button
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Load Savepoint"
         android:id="@+id/btnLoad"
-        android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/btnStart"
-        android:layout_marginStart="32dp" />
+        android:background="@drawable/load_savepoint"
+        android:layout_marginEnd="74dp"
+        android:layout_above="@+id/btnExit"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="20dp" />
 
-    <Button
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start Tour"
+        android:background="@drawable/start_tour"
         android:id="@+id/btnStart"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="34dp" />
+        android:layout_alignTop="@+id/btnLoad"
+        android:layout_alignStart="@+id/btnAbout" />
 
-    <Button
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="About"
+        android:background="@drawable/about"
         android:id="@+id/btnAbout"
-        android:layout_alignParentBottom="true"
-        android:layout_toStartOf="@+id/btnExit"
-        android:layout_marginEnd="32dp" />
+        android:layout_marginEnd="84dp"
+        android:layout_alignTop="@+id/btnExit"
+        android:layout_toStartOf="@+id/btnExit" />
 
-    <Button
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Exit"
+        android:background="@drawable/exit"
         android:id="@+id/btnExit"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="34dp" />
+        android:layout_alignStart="@+id/btnLoad"
+        android:layout_marginBottom="16dp" />
 </RelativeLayout>
