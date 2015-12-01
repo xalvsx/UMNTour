@@ -49,6 +49,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 exitTransition(CorridorExample.class);
+                ProgressDialog p = new ProgressDialog(MainActivity.this);
+                p.setIndeterminate(false);
+                p.setCancelable(false);
+                p.setMessage("Starting tour...");
+                p.show();
             }
         });
 
