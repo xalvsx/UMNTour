@@ -109,7 +109,7 @@ public class Corridor3left1 extends TourActivity {
             btnToCorridor3kiri2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    zoomToThis(v, Lantai3.class);
+                    zoomToThis(v, Corridor3left2.class);
                 }
             });
             //end code button programmatically

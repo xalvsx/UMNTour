@@ -44,11 +44,11 @@ public class Bridge extends TourActivity {
         });
 
         ImageButton btnToA = new ImageButton(this);
-        btnToA.setBackgroundResource(R.drawable.orange_arrow_left);
+        btnToA.setBackgroundResource(R.drawable.orange_arrow_up);
         RelativeLayout.LayoutParams lp4 = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        lp4.addRule(RelativeLayout.CENTER_HORIZONTAL);
-        lp4.addRule(RelativeLayout.ALIGN_PARENT_TOP);
-        lp4.setMargins(0,getdp(123),0,0);
+        lp4.addRule(RelativeLayout.CENTER_VERTICAL);
+        lp4.addRule(RelativeLayout.ALIGN_PARENT_END);
+        lp4.setMarginEnd(getdp(205));
         btnToA.setLayoutParams(lp4);
         layout.addView(btnToA);
         btnToA.setId(View.generateViewId());

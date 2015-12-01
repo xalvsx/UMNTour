@@ -449,6 +449,7 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
         v.startAnimation(fade);
 
         for (ImageButton btn: mButtons) {
+            btn.setClickable(false);
             if(btn!=v) {
                 Animation f = AnimationUtils.loadAnimation(getApplicationContext(),
                         R.anim.fade);
@@ -511,6 +512,7 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
         v.startAnimation(fade);
 
         for (ImageButton btn: mButtons) {
+            btn.setClickable(false);
             if(btn!=v) {
                 Animation f = AnimationUtils.loadAnimation(getApplicationContext(),
                         R.anim.fade);

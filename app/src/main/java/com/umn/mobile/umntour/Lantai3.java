@@ -45,7 +45,7 @@ public class Lantai3 extends TourActivity {
             btnTolt2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    zoomToThis(v, RoomExample.class);
+                    zoomToThis(v, Lantai2.class);
                 }
             });
             //end code button programmatically
@@ -143,8 +143,8 @@ public class Lantai3 extends TourActivity {
             RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             lp.addRule(RelativeLayout.ALIGN_PARENT_END);
             lp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
-            lp.setMarginEnd(getdp(156));
-            lp.setMargins(0, 0, 0, getdp(75));
+            lp.setMarginEnd(getdp(179));
+            lp.setMargins(0, 0, 0, getdp(104));
             btnTolt2.setLayoutParams(lp);
             layout.addView(btnTolt2);
             //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
@@ -154,7 +154,7 @@ public class Lantai3 extends TourActivity {
             btnTolt2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    zoomToThis(v, RoomExample.class);
+                    zoomToThis(v, Lantai2.class);
                 }
             });
             //end code button programmatically
@@ -208,8 +208,8 @@ public class Lantai3 extends TourActivity {
             RelativeLayout.LayoutParams lplt3kanan = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             lplt3kanan.addRule(RelativeLayout.ALIGN_PARENT_TOP);
             lplt3kanan.addRule(RelativeLayout.ALIGN_PARENT_END);
-            lplt3kanan.setMarginEnd(getdp(137));
-            lplt3kanan.setMargins(0, getdp(145), 0, 0);
+            lplt3kanan.setMarginEnd(getdp(172));
+            lplt3kanan.setMargins(0, getdp(119), 0, 0);
             btnToCorridorlt3kanan.setLayoutParams(lplt3kanan);
             layout.addView(btnToCorridorlt3kanan);
             //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");

@@ -76,6 +76,7 @@ public class Corridor3Right3 extends TourActivity {
                 btnToBackCorridor3kanan2.setBackgroundResource(R.drawable.arrow_down);
                 RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                 lp.addRule(RelativeLayout.ALIGN_PARENT_START);
+                lp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
                 lp.setMarginStart(getdp(219));
                 btnToBackCorridor3kanan2.setLayoutParams(lp);
                 layout.addView(btnToBackCorridor3kanan2);

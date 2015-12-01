@@ -45,7 +45,7 @@
             android:name=".Corridor2Left"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".Corridor2Left2"
+            android:name=".Corridor2Left1"
             android:screenOrientation="landscape" />
         <activity
             android:name=".Corridor3left"
@@ -86,16 +86,31 @@
         <activity
             android:name=".Toilet3"
             android:screenOrientation="landscape" />
-        <activity android:name=".Corridor3Right3"
+        <activity
+            android:name=".Corridor3Right3"
             android:screenOrientation="landscape" />
-        <activity android:name=".ServerBridge"
+        <activity
+            android:name=".ServerBridge"
             android:screenOrientation="landscape" />
-        <activity android:name=".Bridge"
+        <activity
+            android:name=".Bridge"
             android:screenOrientation="landscape" />
-        <activity android:name=".EmergencyExit"
+        <activity
+            android:name=".EmergencyExit"
             android:screenOrientation="landscape" />
-        <activity android:name=".EmergencyExitDetail"
-            android:screenOrientation="landscape"></activity>
+        <activity
+            android:name=".EmergencyExitDetail"
+            android:screenOrientation="landscape" />
+        <activity android:name=".RoomB204" />
+        <activity android:name=".RoomB205" />
+        <activity android:name=".Corridor2Left2" />
+        <activity android:name=".RoomB201" />
+        <activity android:name=".RoomB202" />
+        <activity android:name=".RoomB203" />
+        <activity android:name=".Corridor2Right" />
+        <activity android:name=".Toilet2" />
+        <activity android:name=".Mushola" />
+        <activity android:name=".Balcony"></activity>
     </application>
 
 </manifest>

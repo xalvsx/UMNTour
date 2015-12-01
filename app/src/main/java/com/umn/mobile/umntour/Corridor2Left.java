@@ -45,7 +45,7 @@ public class Corridor2Left extends TourActivity {
             btnToCorridorKiri1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    zoomToThis(v, Lantai2.class);
+                    zoomToThis(v, Corridor2Left1.class);
                 }
             });
             //end code button programmatically
@@ -61,11 +61,11 @@ public class Corridor2Left extends TourActivity {
             //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
             //komen diatas itu contoh batas panjang kata2nya
             btnToCorridorBack.setId(View.generateViewId());
-            details.put(btnToCorridorBack.getId(), "Back to Second Floor");
+            btnBack = btnToCorridorBack;
             btnToCorridorBack.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    zoomToThis(v, Lantai2.class);
+                    zoomOutFade(v, Lantai2.class);
                 }
             });
             //end code button programmatically
@@ -89,7 +89,7 @@ public class Corridor2Left extends TourActivity {
             btnToCorridorKiri2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    zoomToThis(v, Lantai2.class);
+                    zoomToThis(v, Corridor2Left1.class);
                 }
             });
             //end code button programmatically
@@ -105,11 +105,11 @@ public class Corridor2Left extends TourActivity {
             //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
             //komen diatas itu contoh batas panjang kata2nya
             btnToCorridorBackNight.setId(View.generateViewId());
-            details.put(btnToCorridorBackNight.getId(), "Back to Second Floor");
+            btnBack = btnToCorridorBackNight;
             btnToCorridorBackNight.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    zoomToThis(v, Lantai2 .class);
+                    zoomOutFade(v, Lantai2.class);
                 }
             });
             //end code button programmatically

@@ -21,7 +21,7 @@ public class ServerBridge extends TourActivity {
         if (isDay) { //jika pagi, gambarnya apa
             iv.setImageResource(R.drawable.server_pintu_b);
         } else { //jika malam, gambarnya apa
-            iv.setImageResource(R.drawable.server_pintu_b);
+            iv.setImageResource(R.drawable.server_pintu_b_night);
         }
 
         //isi detail dari ruangan ini, misal nama tempat ini = Contoh Tour
@@ -29,7 +29,7 @@ public class ServerBridge extends TourActivity {
 
         //code untuk bikin button programmatically
         ImageButton btnToServer = new ImageButton(this);
-        btnToServer.setBackgroundResource(R.drawable.orange_arrow_left);
+        btnToServer.setBackgroundResource(R.drawable.arrow_left);
         RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         lp.addRule(RelativeLayout.ALIGN_PARENT_START);
         lp.addRule(RelativeLayout.CENTER_VERTICAL);
@@ -60,11 +60,11 @@ public class ServerBridge extends TourActivity {
         //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
         //komen diatas itu contoh batas panjang kata2nya
         btnToBackCorridor3kanan3.setId(View.generateViewId());
-        details.put(btnToBackCorridor3kanan3.getId(), "This is the way to go to the Corridor 3 Left 1.");
+        btnBack = btnToBackCorridor3kanan3;
         btnToBackCorridor3kanan3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                zoomToThis(v, Corridor3Right3.class);
+                zoomOutFade(v, Corridor3Right3.class);
             }
         });
         //end code button programmatically
