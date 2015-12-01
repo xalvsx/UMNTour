@@ -39,12 +39,54 @@
             android:name=".CorridorExample"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".Lantai2"
+            android:name=".Corridor3left"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".Corridor2Left"
+            android:name=".Corridor3left1"
             android:screenOrientation="landscape" />
-        <activity android:name=".Corridor2Left2"></activity>
+        <activity
+            android:name=".Corridor3left2"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Corridor3Right"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Corridor3Right1"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Corridor3Right2"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Lantai3"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".RoomB301"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".RoomB304"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".RoomB311"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".RoomB315"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".StudentLounge"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Toilet3"
+            android:screenOrientation="landscape" />
+        <activity android:name=".Corridor3Right3"
+            android:screenOrientation="landscape" />
+        <activity android:name=".ServerBridge"
+            android:screenOrientation="landscape" />
+        <activity android:name=".Bridge"
+            android:screenOrientation="landscape" />
+        <activity android:name=".EmergencyExit"
+            android:screenOrientation="landscape" />
+        <activity android:name=".EmergencyExitDetail"
+            android:screenOrientation="landscape"></activity>
     </application>
 
 </manifest>

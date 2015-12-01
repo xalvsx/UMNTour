@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
@@ -58,6 +59,8 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
 
     protected Snackbar activeSnackbar = null;
 
+    protected ImageView btnBack = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,6 +77,8 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
 
         fab = (FloatingActionButton)findViewById(R.id.fab);
         fab1 = (FloatingActionButton)findViewById(R.id.fab1);
@@ -274,6 +279,7 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
                     fab4.setImageResource(android.R.drawable.btn_star_big_off);
                     Snackbar.make(v, "Savepoint has been deleted :)", Snackbar.LENGTH_SHORT).show();
                     bookmarked = false;
+                    editor.commit();
                 }
                 else {
                     String savepoint = sharedPreferences.getString("Savepoint","no");
@@ -282,6 +288,7 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
                         fab4.setImageResource(android.R.drawable.btn_star_big_on);
                         Snackbar.make(v, "Savepoint has been created :)", Snackbar.LENGTH_SHORT).show();
                         bookmarked = true;
+                        editor.commit();
                     }
                     else {
                         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -294,6 +301,7 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
                                         fab4.setImageResource(android.R.drawable.btn_star_big_on);
                                         Snackbar.make(v2, "Savepoint has been created :)", Snackbar.LENGTH_SHORT).show();
                                         bookmarked = true;
+                                        editor.commit();
                                         dialog.dismiss();
                                     }
                                 })
@@ -307,7 +315,7 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
                         dialog.show();
                     }
                 }
-                editor.commit();
+
 
                 break;
             case R.id.fab5:
@@ -459,6 +467,68 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
         exitTransition(cls,2000);
     }
 
+    protected void zoomOutFade(View v, Class cls) {
+        if(isFabOpen)
+        {
+            fab.callOnClick();
+        }
+        final ImageView iv = (ImageView)findViewById(R.id.bgImage);
+        float scaleX = 0.85f;
+        float scaleY = 0.85f;
+        float pX = iv.getWidth()/2;
+        float pY = iv.getHeight()/2;
+        long duration = 3000;
+
+        final Animation s = new ScaleAnimation(1,scaleX,1,scaleY,pX,pY);
+        s.setFillAfter(true);
+        s.setDuration(duration);
+        s.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {}
+            @Override
+            public void onAnimationEnd(Animation animation) {}
+            @Override
+            public void onAnimationRepeat(Animation animation) {}
+        });
+
+        //fade the button
+        Animation fade = AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.fade);
+        fade.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {}
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                Snackbar snack = Snackbar.make(iv, "Navigating...", Snackbar.LENGTH_SHORT);
+                ViewGroup group = (ViewGroup) snack.getView();
+                group.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), android.R.color.holo_blue_dark));
+                snack.show();
+                iv.startAnimation(s);
+            }
+            @Override
+            public void onAnimationRepeat(Animation animation) {}
+        });
+        v.startAnimation(fade);
+
+        for (ImageButton btn: mButtons) {
+            if(btn!=v) {
+                Animation f = AnimationUtils.loadAnimation(getApplicationContext(),
+                        R.anim.fade);
+                f.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {}
+                    @Override
+                    public void onAnimationEnd(Animation animation) {}
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {}
+                });
+                btn.startAnimation(f);
+            }
+        };
+
+        exitTransition(cls,2000);
+    }
+
     protected void getAllImageButtons(ViewGroup v) {
         for (int i = 0; i < v.getChildCount(); i++) {
             View child = v.getChildAt(i);
@@ -497,6 +567,8 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
                 public void onAnimationRepeat(Animation animation) {}
             });
             btn.startAnimation(f);
+
+            if(btn == btnBack) continue;
 
             float fromX = 1;
             float fromY = 1;
