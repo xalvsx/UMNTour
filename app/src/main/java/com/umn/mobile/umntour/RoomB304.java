@@ -21,7 +21,7 @@ public class RoomB304 extends TourActivity {
         iv.setImageResource(R.drawable.b304);
 
         //isi detail dari ruangan ini, misal nama tempat ini = Contoh Tour
-        setActivityDetail("Roon B304", "Room Example is a room that basically used by student to do many activities like meeting, UKM, etc.");
+        setActivityDetail("Room B304", "Room B304 is a room that basically used by student to do many activities like meeting, UKM, etc.");
 
         //code untuk bikin button programmatically
         ImageButton btnToBackCorridor3kiri1 = new ImageButton(this);
@@ -36,7 +36,7 @@ public class RoomB304 extends TourActivity {
         //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
         //komen diatas itu contoh batas panjang kata2nya
         btnToBackCorridor3kiri1.setId(View.generateViewId());
-        details.put(btnToBackCorridor3kiri1.getId(), "This is the way to go to the Corridor Example. Corridor Example links many other rooms.");
+        details.put(btnToBackCorridor3kiri1.getId(), "This is the way to go to the Corridor 3 Left 1.");
         btnToBackCorridor3kiri1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

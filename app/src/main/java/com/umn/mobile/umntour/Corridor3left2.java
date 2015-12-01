@@ -48,48 +48,27 @@ public class Corridor3left2 extends TourActivity {
                 }
             });
             //end code button programmatically
-
-            //code untuk bikin button programmatically
-            ImageButton btnToBackCorridor3Left1 = new ImageButton(this);
-            btnToBackCorridor3Left1.setBackgroundResource(R.drawable.arrow_down);
-            RelativeLayout.LayoutParams lp3 = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-            lp3.addRule(RelativeLayout.CENTER_HORIZONTAL);
-            lp3.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
-            lp3.setMargins(0, 0, 0, getdp(10));
-            btnToBackCorridor3Left1.setLayoutParams(lp3);
-            layout.addView(btnToBackCorridor3Left1);
-            //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
-            //komen diatas itu contoh batas panjang kata2nya
-            btnToBackCorridor3Left1.setId(View.generateViewId());
-            details.put(btnToBackCorridor3Left1.getId(), "This is the way to go to the Corridor Example. Corridor Example links many other rooms.");
-            btnToBackCorridor3Left1.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    zoomToThis(v, Corridor3left2.class);
-                }
-            });
-            //end code button programmatically
-        } else {
-            //code untuk bikin button programmatically
-            ImageButton btnToBackCorridor3Left1 = new ImageButton(this);
-            btnToBackCorridor3Left1.setBackgroundResource(R.drawable.arrow_down);
-            RelativeLayout.LayoutParams lp3 = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-            lp3.addRule(RelativeLayout.CENTER_HORIZONTAL);
-            lp3.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
-            lp3.setMargins(0, 0, 0, getdp(10));
-            btnToBackCorridor3Left1.setLayoutParams(lp3);
-            layout.addView(btnToBackCorridor3Left1);
-            //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
-            //komen diatas itu contoh batas panjang kata2nya
-            btnToBackCorridor3Left1.setId(View.generateViewId());
-            details.put(btnToBackCorridor3Left1.getId(), "This is the way to go to the Corridor Example. Corridor Example links many other rooms.");
-            btnToBackCorridor3Left1.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    zoomToThis(v, Corridor3left.class);
-                }
-            });
-            //end code button programmatically
         }
+
+        //code untuk bikin button programmatically
+        ImageButton btnToBackCorridor3Left1 = new ImageButton(this);
+        btnToBackCorridor3Left1.setBackgroundResource(R.drawable.arrow_down);
+        RelativeLayout.LayoutParams lp3 = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        lp3.addRule(RelativeLayout.CENTER_HORIZONTAL);
+        lp3.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+        lp3.setMargins(0, 0, 0, getdp(10));
+        btnToBackCorridor3Left1.setLayoutParams(lp3);
+        layout.addView(btnToBackCorridor3Left1);
+        //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
+        //komen diatas itu contoh batas panjang kata2nya
+        btnToBackCorridor3Left1.setId(View.generateViewId());
+        details.put(btnToBackCorridor3Left1.getId(), "This is the way to go to the Corridor Example. Corridor Example links many other rooms.");
+        btnToBackCorridor3Left1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                zoomToThis(v, Corridor3left1.class);
+            }
+        });
+        //end code button programmatically
     }
 }
