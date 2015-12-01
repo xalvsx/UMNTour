@@ -7,11 +7,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Menu;
@@ -20,6 +18,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -48,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                animateButton(v);
                 exitTransition(Lantai3.class);
                 ProgressDialog p = new ProgressDialog(MainActivity.this);
                 p.setIndeterminate(false);
@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
         btnAbout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dialog.show();
+                animateButton(v); dialog.show();
             }
         });
 
@@ -107,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
             btnLoad.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    animateButton(v);
                     try {
                         exitTransition(Class.forName(savepoint));
                         ProgressDialog p = new ProgressDialog(MainActivity.this);
@@ -125,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
             btnLoad.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    animateButton(v);
                     Snackbar snack = Snackbar.make(v, "You don't have a savepoint. Start touring and save one!", Snackbar.LENGTH_SHORT);
                     ViewGroup group = (ViewGroup) snack.getView();
                     group.setAlpha(0.9f);
@@ -138,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
         btnExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                animateButton(v);
                 onBackPressed();
             }
         });
@@ -170,6 +173,20 @@ public class MainActivity extends AppCompatActivity {
         b.setStartOffset(500);
 
         ll.startAnimation(b);
+    }
+
+    private void animateButton(View view) {
+        final View v = view;
+        Animation btnAnimate = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.button_animate);
+        btnAnimate.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {}
+            @Override
+            public void onAnimationEnd(Animation animation) {}
+            @Override
+            public void onAnimationRepeat(Animation animation) {}
+        });
+        v.startAnimation(btnAnimate);
     }
 
     @Override
