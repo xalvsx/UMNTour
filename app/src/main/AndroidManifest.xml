@@ -12,7 +12,7 @@
             android:name=".Loading.LoadScreen1"
             android:label="@string/title_activity_load_screen1"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Loading.LoadScreen2"
             android:screenOrientation="landscape" />
@@ -38,9 +38,21 @@
         <activity
             android:name=".CorridorExample"
             android:screenOrientation="landscape" />
-        <activity android:name=".Lantai3"
+        <activity
+            android:name=".Lantai3"
             android:screenOrientation="landscape" />
-        <activity android:name=".Toilet3"
+        <activity
+            android:name=".Toilet3"
+            android:screenOrientation="landscape" />
+        <activity android:name=".Corridor3left"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".Corridor3left1"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".RoomB304"
+            android:screenOrientation="landscape" />
+        <activity android:name=".Corridor3left2"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".RoomB301"
             android:screenOrientation="landscape"></activity>
     </application>
 
