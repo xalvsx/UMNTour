@@ -274,6 +274,7 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
                     fab4.setImageResource(android.R.drawable.btn_star_big_off);
                     Snackbar.make(v, "Savepoint has been deleted :)", Snackbar.LENGTH_SHORT).show();
                     bookmarked = false;
+                    editor.commit();
                 }
                 else {
                     String savepoint = sharedPreferences.getString("Savepoint","no");
@@ -282,6 +283,7 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
                         fab4.setImageResource(android.R.drawable.btn_star_big_on);
                         Snackbar.make(v, "Savepoint has been created :)", Snackbar.LENGTH_SHORT).show();
                         bookmarked = true;
+                        editor.commit();
                     }
                     else {
                         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -294,6 +296,7 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
                                         fab4.setImageResource(android.R.drawable.btn_star_big_on);
                                         Snackbar.make(v2, "Savepoint has been created :)", Snackbar.LENGTH_SHORT).show();
                                         bookmarked = true;
+                                        editor.commit();
                                         dialog.dismiss();
                                     }
                                 })
@@ -307,7 +310,7 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
                         dialog.show();
                     }
                 }
-                editor.commit();
+
 
                 break;
             case R.id.fab5:
