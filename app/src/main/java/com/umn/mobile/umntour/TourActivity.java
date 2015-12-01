@@ -237,7 +237,24 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.fab1:
                 //navigate to home activity
-                exitTransition(MainActivity.class,0);
+                AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
+                builder2.setTitle("Home")
+                        .setMessage("Do you want to go back to home?")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                exitTransition(MainActivity.class,0);
+                                dialog.dismiss();
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+                AlertDialog dialog2 = builder2.create();
+                dialog2.show();
                 break;
             case R.id.fab2:
                 //show group member
@@ -697,4 +714,25 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
         ll.startAnimation(b);
     }
 
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
+        builder2.setTitle("Exit")
+                .setMessage("Do you want to go exit the application?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                        dialog.dismiss();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog dialog2 = builder2.create();
+        dialog2.show();
+    }
 }
