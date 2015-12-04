@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal">
+
+    <TableRow android:gravity="center"
+        android:layout_marginBottom="10dip">
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Group Member"
+            android:textSize="28sp"
+            android:textColor="@android:color/holo_blue_light"
+            android:textStyle="italic"
+            android:gravity="center"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_marginBottom="10dip">
+        <FrameLayout android:layout_weight="1"
+            android:padding="10dp">
+            <ImageView
+                android:layout_width="480px"
+                android:layout_height="270px"
+                android:scaleType="fitXY"
+                android:background="@drawable/cwallpaper"
+                android:layout_gravity="center"/>
+        </FrameLayout>
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Alfian Setyowijoyo - 12110110063\nAntonius Mitra Pawarta - 12110110077\nRichard Willy Putra - 12110210010"
+            android:gravity="center"/>
+    </TableRow>
+
+</TableLayout>

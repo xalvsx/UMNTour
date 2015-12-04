@@ -5,9 +5,22 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_main" tools:context=".MainActivity"
-    android:id="@+id/layout"
-    android:background="@drawable/main">
-
+    android:id="@+id/layout">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/background"
+        android:background="@drawable/umn"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/background2"
+        android:background="@drawable/umn"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/main"
+        android:alpha="0.5"/>
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

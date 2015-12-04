@@ -1,10 +1,12 @@
 package com.umn.mobile.umntour;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
@@ -28,8 +30,12 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TableLayout;
 import android.widget.TextView;
 
+import com.gitonway.lee.niftynotification.lib.Configuration;
+import com.gitonway.lee.niftynotification.lib.Effects;
+import com.gitonway.lee.niftynotification.lib.NiftyNotificationView;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.OnItemClickListener;
 import com.orhanobut.dialogplus.ViewHolder;
@@ -53,6 +59,8 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
     protected boolean bookmarked = false;
     protected boolean isTouring = false;
     protected boolean isDay = true;
+    protected boolean isDayBefore;
+    protected boolean isLoad = false;
 
     protected SharedPreferences sharedPreferences;
     protected HashMap<Integer, String> details = new HashMap<>();
@@ -60,6 +68,9 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
     protected Snackbar activeSnackbar = null;
 
     protected ImageView btnBack = null;
+
+    Configuration cfg;
+    ViewHolder viewHolder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,14 +126,31 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
             isDay = false;
         }
 
+        isDayBefore = getIntent().getBooleanExtra("isDay",true);
+        isLoad = getIntent().getBooleanExtra("isLoad",false);
+
         layout = (RelativeLayout)findViewById(R.id.layout);
 
         setUpActivity();
 
         getAllImageButtons((ViewGroup) findViewById(R.id.layout));
+
+        cfg = new Configuration.Builder()
+                .setAnimDuration(700)
+                .setDispalyDuration(2500)
+                .setBackgroundColor("#FFBDC3C7")
+                .setTextColor("#FF444444")
+                .setIconBackgroundColor("#EFEFEFEF")
+                .setTextPadding(5)                      //dp
+                .setViewHeight(48)                      //dp
+                .setTextLines(2)                        //You had better use setViewHeight and setTextLines together
+                .setTextGravity(Gravity.CENTER)         //only text def  Gravity.CENTER,contain icon Gravity.CENTER_VERTICAL
+                .build();
+
+        viewHolder = new ViewHolder(R.layout.group_member);
     }
 
-    protected void setUpActivity(){};
+    protected void setUpActivity(){}
 
     protected int getdp(int val) {
         int px = (int) TypedValue.applyDimension(
@@ -194,7 +222,7 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     protected void showGroup() {
-        LinearLayout lay = new LinearLayout(getApplicationContext());
+        /*LinearLayout lay = new LinearLayout(getApplicationContext());
         LinearLayout.LayoutParams p = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         p.setMargins(50, 50, 50, 50);
         lay.setLayoutParams(p);
@@ -205,7 +233,8 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
 
         ImageView ivGroup = new ImageView(this);
         ivGroup.setImageResource(R.drawable.umntour);
-        lay.addView(ivGroup);
+        lay.addView(ivGroup);*/
+
 
         final DialogPlus dialog = DialogPlus.newDialog(this)
                 .setOnItemClickListener(new OnItemClickListener() {
@@ -213,7 +242,7 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
                     public void onItemClick(DialogPlus dialog, Object item, View view, int position) {
                     }
                 })
-                .setContentHolder(new ViewHolder(lay))
+                .setContentHolder(viewHolder)
                 .setInAnimation(R.anim.group_dialog_in)
                 .setOutAnimation(R.anim.group_dialog_out)
                 .setGravity(Gravity.CENTER)
@@ -224,12 +253,12 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
                 .create();
         dialog.show();
 
-        ivGroup.setOnClickListener(new View.OnClickListener() {
+        /*ivGroup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();
             }
-        });
+        });*/
     }
 
     @Override
@@ -406,6 +435,7 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     protected void zoomToThis(View v, Class cls) {
+        ImageButton v1 = (ImageButton)v;
         if(isFabOpen)
         {
             fab.callOnClick();
@@ -431,7 +461,7 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
 
         //fade the button
         Animation fade = AnimationUtils.loadAnimation(getApplicationContext(),
-                R.anim.fade);
+                R.anim.fade3);
         fade.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {}
@@ -493,8 +523,8 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
         });
 
         //fade the button
-        Animation fade = AnimationUtils.loadAnimation(getApplicationContext(),
-                R.anim.fade);
+        final Animation fade = AnimationUtils.loadAnimation(getApplicationContext(),
+                R.anim.fade3);
         fade.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {}
@@ -578,7 +608,7 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
             float scaleY = 2.5f;
             float pX = btn.getX();
             float pY = btn.getY();
-            long duration2 = 3000;
+            long duration2 = 2500;
 
             Animation s = new ScaleAnimation(fromX,scaleX,fromY,scaleY,pX,pY);
             s.setFillAfter(true);
@@ -596,7 +626,7 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
                 public void onAnimationRepeat(Animation animation) {}
             });
 
-            duration += 5500;
+            duration += 5000;
             animationSet.addAnimation(s);
 
             Animation s2 = new ScaleAnimation(fromX,1/scaleX,fromY,1/scaleY,pX,pY);
@@ -613,7 +643,7 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
                 @Override
                 public void onAnimationRepeat(Animation animation) {}
             });
-            duration += 2250;
+            duration += 1750;
             animationSet.addAnimation(s2);
         };
 
@@ -743,19 +773,43 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
     protected void enterTransition() {
         if(flagEnter) {
             final RelativeLayout ll = (RelativeLayout) findViewById(R.id.topLayout);
+            final Activity t = this;
 
             Animation b = new AlphaAnimation(0, 1);
             b.setDuration(1100);
             b.setFillAfter(true);
             b.setAnimationListener(new Animation.AnimationListener() {
                 @Override
-                public void onAnimationStart(Animation animation) {}
+                public void onAnimationStart(Animation animation) {
+                }
+
                 @Override
                 public void onAnimationEnd(Animation animation) {
                     ll.setAlpha(1);
+                    if (!isLoad) {
+                        if (getIntent().getStringExtra("Start") != null) {
+                            NiftyNotificationView.build(t, "Welcome to UMN Tour! Enjoy your time.", Effects.slideIn, R.id.layout, cfg)
+                                    .setIcon(R.drawable.umntour)
+                                    .show();
+                        } else if (isDay && !isDayBefore) {
+                            NiftyNotificationView.build(t, "You're entering UMN Day Tour mode..", Effects.slideIn, R.id.layout, cfg)
+                                    .setIcon(R.drawable.umntour)
+                                    .show();
+                        } else if (!isDay && isDayBefore) {
+                            NiftyNotificationView.build(t, "You're entering UMN Night Tour mode..", Effects.slideIn, R.id.layout, cfg)
+                                    .setIcon(R.drawable.umntour)
+                                    .show();
+                        }
+                    } else {
+                        NiftyNotificationView.build(t, "Savepoint loaded successfully!", Effects.slideIn, R.id.layout, cfg)
+                                .setIcon(R.drawable.umntour)
+                                .show();
+                    }
                 }
+
                 @Override
-                public void onAnimationRepeat(Animation animation) {}
+                public void onAnimationRepeat(Animation animation) {
+                }
             });
 
             ll.startAnimation(b);
@@ -777,6 +831,7 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
             public void onAnimationEnd(Animation animation) {
                 ll.setAlpha(0);
                 Intent i = new Intent(getApplicationContext(), c);
+                i.putExtra("isDay",isDay);
                 startActivity(i);
                 finish();
             }

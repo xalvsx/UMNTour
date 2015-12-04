@@ -34,12 +34,6 @@
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".RoomExample"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".CorridorExample"
-            android:screenOrientation="landscape" />
-        <activity
             android:name=".Lantai2"
             android:screenOrientation="landscape" />
         <activity

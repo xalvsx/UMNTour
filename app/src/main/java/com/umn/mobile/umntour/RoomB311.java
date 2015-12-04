@@ -1,5 +1,6 @@
 package com.umn.mobile.umntour;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,6 +21,12 @@ public class RoomB311 extends TourActivity {
         ImageView iv = (ImageView)findViewById(R.id.bgImage);
         iv.setImageResource(R.drawable.b311);
 
+        if(!isDay) { //cuma bisa diakses siang
+            Intent i = new Intent(getApplicationContext(),Corridor3Right.class);
+            i.putExtra("isDay",isDayBefore);
+            startActivity(i);
+            finish();
+        }
 
         //isi detail dari ruangan ini, misal nama tempat ini = Contoh Tour
         setActivityDetail("Room B311", "Room B311 is a standard classroom.");

@@ -1,7 +1,6 @@
 package com.umn.mobile.umntour;
 
 import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -19,7 +18,6 @@ import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -30,31 +28,52 @@ import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.OnItemClickListener;
 import com.orhanobut.dialogplus.ViewHolder;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     protected SharedPreferences sharedPreferences;
+    List<Integer> bg;
+    ImageButton btnStart, btnLoad, btnAbout, btnExit;
+    int bgSize = 0;
+    boolean isStart = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        bg = new ArrayList<Integer>();
+        bg.add(R.drawable.umn);
+        bg.add(R.drawable.umn2);
+        bg.add(R.drawable.umn3);
+
+        bgSize = bg.size();
+
+        animateBackground();
+
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
-        ImageButton btnStart = (ImageButton)findViewById(R.id.btnStart);
+        btnStart = (ImageButton)findViewById(R.id.btnStart);
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                isStart = true;
                 animateButton(v);
                 exitTransition(Lantai2.class);
-                ProgressDialog p = new ProgressDialog(MainActivity.this);
-                p.setIndeterminate(false);
-                p.setCancelable(false);
-                p.setMessage("Starting tour...");
-                p.show();
+                Snackbar snack = Snackbar.make(v, "Starting Tour...", Snackbar.LENGTH_SHORT);
+                ViewGroup group = (ViewGroup) snack.getView();
+                group.setAlpha(0.9f);
+                group.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), android.R.color.holo_blue_light));
+                snack.show();
+                btnStart.setClickable(false);
+                btnLoad.setClickable(false);
+                btnAbout.setClickable(false);
+                btnExit.setClickable(false);
             }
         });
 
@@ -94,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ImageButton btnAbout = (ImageButton)findViewById(R.id.btnAbout);
+        btnAbout = (ImageButton)findViewById(R.id.btnAbout);
         btnAbout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         final String savepoint = sharedPreferences.getString("Savepoint","no");
-        ImageButton btnLoad = (ImageButton)findViewById(R.id.btnLoad);
+        btnLoad = (ImageButton)findViewById(R.id.btnLoad);
         if(!savepoint.equalsIgnoreCase("no")) {
             btnLoad.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -111,11 +130,15 @@ public class MainActivity extends AppCompatActivity {
                     animateButton(v);
                     try {
                         exitTransition(Class.forName(savepoint));
-                        ProgressDialog p = new ProgressDialog(MainActivity.this);
-                        p.setIndeterminate(false);
-                        p.setCancelable(false);
-                        p.setMessage("Loading...");
-                        p.show();
+                        Snackbar snack = Snackbar.make(v, "Loading....", Snackbar.LENGTH_SHORT);
+                        ViewGroup group = (ViewGroup) snack.getView();
+                        group.setAlpha(0.9f);
+                        group.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), android.R.color.holo_blue_light));
+                        snack.show();
+                        btnStart.setClickable(false);
+                        btnLoad.setClickable(false);
+                        btnAbout.setClickable(false);
+                        btnExit.setClickable(false);
                     } catch (ClassNotFoundException e) {
                         e.printStackTrace();
                         Toast.makeText(MainActivity.this, "An error occured.", Toast.LENGTH_SHORT).show();
@@ -137,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
             });
         }
 
-        ImageButton btnExit = (ImageButton)findViewById(R.id.btnExit);
+        btnExit = (ImageButton)findViewById(R.id.btnExit);
         btnExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -180,6 +203,8 @@ public class MainActivity extends AppCompatActivity {
             public void onAnimationEnd(Animation animation) {
                 ll.setAlpha(0);
                 Intent i = new Intent(getApplicationContext(), c);
+                if(isStart) i.putExtra("Start","Start");
+                else i.putExtra("isLoad",true);
                 startActivity(i);
                 finish();
             }
@@ -198,11 +223,16 @@ public class MainActivity extends AppCompatActivity {
         Animation btnAnimate = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.button_animate);
         btnAnimate.setAnimationListener(new Animation.AnimationListener() {
             @Override
-            public void onAnimationStart(Animation animation) {}
+            public void onAnimationStart(Animation animation) {
+            }
+
             @Override
-            public void onAnimationEnd(Animation animation) {}
+            public void onAnimationEnd(Animation animation) {
+            }
+
             @Override
-            public void onAnimationRepeat(Animation animation) {}
+            public void onAnimationRepeat(Animation animation) {
+            }
         });
         v.startAnimation(btnAnimate);
     }
@@ -232,5 +262,55 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    static int i = 0;
+
+    private void animateBg(final int x) {
+        final int before = (x+bgSize-1)%bgSize;
+        i = (i+1)%2;
+        final ImageView iv = (ImageView)findViewById(R.id.background);
+        final ImageView iv2 = (ImageView)findViewById(R.id.background2);
+        final Animation fadeIn = new AlphaAnimation(0,1);
+        fadeIn.setDuration(1);
+        fadeIn.setFillAfter(true);
+        final Animation fadeOut = new AlphaAnimation(1,0);
+        fadeOut.setDuration(2000);
+        fadeOut.setFillAfter(true);
+
+        iv2.post(new Runnable() {
+            @Override
+            public void run() {
+                iv2.setBackgroundResource(bg.get(before));
+                iv2.startAnimation(fadeOut);
+            }
+        });
+
+        iv.post(new Runnable() {
+            @Override
+            public void run() {
+                iv.setBackgroundResource(bg.get(x));
+                iv.startAnimation(fadeIn);
+            }
+        });
+    }
+
+    private void animateBackground() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                int i = 0;
+                while(true) {
+                    i = (i+1)%bgSize;
+                    try {
+                        Thread.sleep(4000);
+                    }
+                    catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    animateBg(i);
+                }
+            }
+        }).start();
     }
 }
