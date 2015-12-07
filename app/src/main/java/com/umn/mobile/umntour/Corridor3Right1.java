@@ -18,12 +18,11 @@ public class Corridor3Right1 extends TourActivity {
     @Override
     protected void setUpActivity() {
         ImageView iv = (ImageView)findViewById(R.id.bgImage);
-        iv.setImageResource(R.drawable.wallpaper); //sementara
         if(isDay) { //jika pagi, gambarnya apa
-            //iv.setImageResource(R.drawable.selasar3_kanan1);
+            iv.setImageResource(R.drawable.selasar3_kanan1);
         }
         else { //jika malam, gambarnya apa
-            //iv.setImageResource(R.drawable.selasar3_kanan1_night);
+            iv.setImageResource(R.drawable.selasar3_kanan1_night);
         }
 
 
@@ -52,10 +51,9 @@ public class Corridor3Right1 extends TourActivity {
         ImageButton btnToStudentLounge = new ImageButton(this);
         btnToStudentLounge.setBackgroundResource(R.drawable.arrow_up);
         RelativeLayout.LayoutParams lp2 = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        lp2.addRule(RelativeLayout.ALIGN_PARENT_TOP);
+        lp2.addRule(RelativeLayout.CENTER_VERTICAL);
         lp2.addRule(RelativeLayout.ALIGN_PARENT_START);
-        lp2.setMarginStart(getdp(128));
-        lp2.setMargins(0, getdp(93), 0, 0);
+        lp2.setMarginStart(getdp(93));
         btnToStudentLounge.setLayoutParams(lp2);
         layout.addView(btnToStudentLounge);
         btnToStudentLounge.setId(View.generateViewId());
@@ -72,10 +70,9 @@ public class Corridor3Right1 extends TourActivity {
         ImageButton btnToCorridor3Right2 = new ImageButton(this);
         btnToCorridor3Right2.setBackgroundResource(R.drawable.arrow_up);
         RelativeLayout.LayoutParams lp3 = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        lp3.addRule(RelativeLayout.ALIGN_PARENT_TOP);
-        lp3.addRule(RelativeLayout.ALIGN_PARENT_END);
-        lp3.setMarginEnd(getdp(157));
-        lp3.setMargins(0, getdp(124), 0, 0);
+        lp3.addRule(RelativeLayout.CENTER_HORIZONTAL);
+        lp3.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+        lp3.setMargins(0, 0, 0, getdp(102));
         btnToCorridor3Right2.setLayoutParams(lp3);
         layout.addView(btnToCorridor3Right2);
         btnToCorridor3Right2.setId(View.generateViewId());
