@@ -35,7 +35,7 @@
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Alfian Setyowijoyo - 12110110063\nAntonius Mitra Pawarta - 12110110077\nRichard Willy Putra - 12110210010"
+            android:text="Alfian Setyowijoyo - 12110110063\nAntonius Mitra Pawarta - 12110110077\nRichard Willy Putra - 12110210003"
             android:gravity="center"/>
     </TableRow>
 
