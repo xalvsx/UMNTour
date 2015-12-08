@@ -27,7 +27,7 @@ public class Corridor3Right1 extends TourActivity {
 
 
         //isi detail dari ruangan ini, misal nama tempat ini = Contoh Tour
-        setActivityDetail("Corridor 3 Right 1", "Corridor 3 Right 1 is a first right side of Building B Floor 3 Corridor.");
+        setActivityDetail("3rd Floor Right Corridor", "The way to go to 3nd floor Classroom and other rooms");
 
         //code untuk bikin button programmatically
         ImageButton btnToCorridor3Right = new ImageButton(this);
@@ -76,7 +76,7 @@ public class Corridor3Right1 extends TourActivity {
         btnToCorridor3Right2.setLayoutParams(lp3);
         layout.addView(btnToCorridor3Right2);
         btnToCorridor3Right2.setId(View.generateViewId());
-        details.put(btnToCorridor3Right2.getId(), "This is the way to go to the Corridor 3 Right 2.");
+        details.put(btnToCorridor3Right2.getId(), "This is the way to go to the next corridor.");
         btnToCorridor3Right2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -20,14 +20,12 @@ public class Balcony extends TourActivity {
         ImageView iv = (ImageView)findViewById(R.id.bgImage);
         if(isDay) {
             iv.setImageResource(R.drawable.balkon_lt2);
-            setActivityDetail("Balcony", "Balcony on day.");
+            setActivityDetail("Balcony", "Balcony to see all activtivty on 1st floor");
         }
         else {
             iv.setImageResource(R.drawable.balkon_lt2_night);
-            setActivityDetail("Balcony", "Balcony on night.");
+            setActivityDetail("Balcony", "Balcony to see all activtivty on 1st floor");
         }
-
-
 
         //code untuk bikin button programmatically
         ImageButton btnToCorridor2Right = new ImageButton(this);

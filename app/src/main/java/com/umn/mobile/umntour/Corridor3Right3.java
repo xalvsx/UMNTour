@@ -25,7 +25,7 @@ public class Corridor3Right3 extends TourActivity {
         }
 
         //isi detail dari ruangan ini, misal nama tempat ini = Contoh Tour
-        setActivityDetail("3rd Floor Left Corridor", "Room Example is a room that basically used by student to do many activities like meeting, UKM, etc.");
+        setActivityDetail("3rd Floor Right Corridor", "The way to go to 3nd floor Classroom and other rooms.");
 
         if(isDay){
             //code untuk bikin button programmatically
@@ -62,7 +62,7 @@ public class Corridor3Right3 extends TourActivity {
             //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
             //komen diatas itu contoh batas panjang kata2nya
             btnToServerBridge.setId(View.generateViewId());
-            details.put(btnToServerBridge.getId(), "This is the way to go to the Corridor Example. Corridor Example links many other rooms.");
+            details.put(btnToServerBridge.getId(), "This is the way to the next corridor.");
             btnToServerBridge.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -105,7 +105,7 @@ public class Corridor3Right3 extends TourActivity {
             //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
             //komen diatas itu contoh batas panjang kata2nya
             btnToServerBridge.setId(View.generateViewId());
-            details.put(btnToServerBridge.getId(), "This is the way to go to the Corridor Example. Corridor Example links many other rooms.");
+            details.put(btnToServerBridge.getId(), "This is the way to the next corridor.");
             btnToServerBridge.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

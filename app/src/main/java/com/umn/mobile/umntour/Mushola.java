@@ -22,7 +22,7 @@ public class Mushola extends TourActivity {
 
 
         //isi detail dari ruangan ini, misal nama tempat ini = Contoh Tour
-        setActivityDetail("Mushola", "Mushola.");
+        setActivityDetail("Mushola", "A place for muslim to pray.");
 
 
 

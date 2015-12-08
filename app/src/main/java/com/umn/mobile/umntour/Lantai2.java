@@ -25,7 +25,7 @@ public class Lantai2 extends TourActivity {
         }
 
         //isi detail dari ruangan ini, misal nama tempat ini = Contoh Tour
-        setActivityDetail("Floor 2","Room Example is a room that basically used by student to do many activities like meeting, UKM, etc.");
+        setActivityDetail("2nd Floor","Access to other floor and corridor");
 
 
         //code untuk bikin button programmatically
@@ -41,11 +41,11 @@ public class Lantai2 extends TourActivity {
         //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
         //komen diatas itu contoh batas panjang kata2nya
         btnToLobby.setId(View.generateViewId());
-        details.put(btnToLobby.getId(), "This is the way to go to the Corridor Example. Corridor Example links many other rooms.");
+        details.put(btnToLobby.getId(), "This is the way to go down to 1st Floor lobby.");
         btnToLobby.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showOtherWayDetail("Lobby", "Menuju ke Lobby gedung B");
+                showOtherWayDetail("1st Floor", "Restricted area");
             }
         });
         //end code button programmatically
@@ -63,7 +63,7 @@ public class Lantai2 extends TourActivity {
         //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
         //komen diatas itu contoh batas panjang kata2nya
         btnToThrid.setId(View.generateViewId());
-        details.put(btnToThrid.getId(), "Tombol ini mengarah menuju lantai 3");
+        details.put(btnToThrid.getId(), "This is the way to go up to 3rd Floor.");
         btnToThrid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,7 +85,7 @@ public class Lantai2 extends TourActivity {
         //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
         //komen diatas itu contoh batas panjang kata2nya
         btnToBalcony.setId(View.generateViewId());
-        details.put(btnToBalcony.getId(), "Tombol ini mengarah menuju balkon lantai 2, pengunjung dapat melihat lobby gedung B");
+        details.put(btnToBalcony.getId(), "Access to balcony, mosque and toilet.");
         btnToBalcony.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

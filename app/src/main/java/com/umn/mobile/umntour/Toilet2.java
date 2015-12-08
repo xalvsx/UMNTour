@@ -25,7 +25,7 @@ public class Toilet2 extends TourActivity {
         }
 
         //isi detail dari ruangan ini, misal nama tempat ini = Contoh Tour
-        setActivityDetail("Toilet", "Room Example is a room that basically used by student to do many activities like meeting, UKM, etc.");
+        setActivityDetail("2nd Floor Toilet", "Public sanitation facilties, complete wih closet, washtafel, clean water supply and other hygienic equipment.");
 
         //code untuk bikin button programmatically
         ImageButton btnToCorridorBack2 = new ImageButton(this);

@@ -27,7 +27,7 @@ public class Corridor3Right2 extends TourActivity {
 
 
         //isi detail dari ruangan ini, misal nama tempat ini = Contoh Tour
-        setActivityDetail("Corridor 3 Right 2", "Corridor 3 Right 2 is a second right side of Building B Floor 3 Corridor.");
+        setActivityDetail("3rd Floor Right Corridor", "The way to go to 3nd floor Classroom and other rooms");
 
 
 

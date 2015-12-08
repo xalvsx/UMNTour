@@ -25,7 +25,7 @@ public class EmergencyExitDetail extends TourActivity {
         }
 
         //isi detail dari ruangan ini, misal nama tempat ini = Contoh Tour
-        setActivityDetail("Corridor 3 Right 2", "Corridor 3 Right 2 is a second right side of Building B Floor 3 Corridor.");
+        setActivityDetail("Emergency Exit", "Corridor 3 Right 2 is a second right side of Building B Floor 3 Corridor.");
 
         //code untuk bikin button programmatically
         ImageButton btnToBack = new ImageButton(this);

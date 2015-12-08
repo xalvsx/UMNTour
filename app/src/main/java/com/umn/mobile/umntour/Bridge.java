@@ -25,7 +25,7 @@ public class Bridge extends TourActivity {
         }
 
         //isi detail dari ruangan ini, misal nama tempat ini = Contoh Tour
-        setActivityDetail("Corridor 3 Right 2", "Corridor 3 Right 2 is a second right side of Building B Floor 3 Corridor.");
+        setActivityDetail("Bridge to A Building", "A shortcut path to the A Bulding.");
 
         ImageButton btnToBack = new ImageButton(this);
         btnToBack.setBackgroundResource(R.drawable.arrow_down);
@@ -52,11 +52,11 @@ public class Bridge extends TourActivity {
         btnToA.setLayoutParams(lp4);
         layout.addView(btnToA);
         btnToA.setId(View.generateViewId());
-        details.put(btnToA.getId(), "This is the way to the Room B315.");
+        details.put(btnToA.getId(), "This is the way to the 3rd floor of A Building.");
         btnToA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showOtherWayDetail("gk boleh","gk boleh");
+                showOtherWayDetail("To A Building","Restricted area");
             }
         });
     }

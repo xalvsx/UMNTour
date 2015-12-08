@@ -29,7 +29,7 @@ public class RoomB202 extends TourActivity {
         }
 
         //isi detail dari ruangan ini, misal nama tempat ini = Contoh Tour
-        setActivityDetail("Room B202", "Room B202 is a standard classroom.");
+        setActivityDetail("Room B202", "Room B202 is a standard classroom and can be use as connecting room.");
 
 
 

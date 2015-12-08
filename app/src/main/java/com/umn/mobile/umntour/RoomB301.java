@@ -29,7 +29,7 @@ public class RoomB301 extends TourActivity {
         }
 
         //isi detail dari ruangan ini, misal nama tempat ini = Contoh Tour
-        setActivityDetail("Room B304", "Room Example is a room that basically used by student to do many activities like meeting, UKM, etc.");
+        setActivityDetail("Room B301", "Room B301 is a standard classroom and can be use as connecting room.");
 
         //code untuk bikin button programmatically
         ImageButton btnToBackCorridor3kiri2 = new ImageButton(this);

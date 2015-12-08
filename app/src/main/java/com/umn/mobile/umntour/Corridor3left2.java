@@ -25,7 +25,7 @@ public class Corridor3left2 extends TourActivity {
         }
 
         //isi detail dari ruangan ini, misal nama tempat ini = Contoh Tour
-        setActivityDetail("3rd Floor Left Corridor", "Room Example is a room that basically used by student to do many activities like meeting, UKM, etc.");
+        setActivityDetail("3rd Floor Left Corridor", "The way to go to 3rd floor Classroom.");
 
         if(isDay){
             //code untuk bikin button programmatically
@@ -40,7 +40,7 @@ public class Corridor3left2 extends TourActivity {
             //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
             //komen diatas itu contoh batas panjang kata2nya
             btnToB301.setId(View.generateViewId());
-            details.put(btnToB301.getId(), "This is the way to go to the Corridor Example. Corridor Example links many other rooms.");
+            details.put(btnToB301.getId(), "This is the way to the Room B301.");
             btnToB301.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

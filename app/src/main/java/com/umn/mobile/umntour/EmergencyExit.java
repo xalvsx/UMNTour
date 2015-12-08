@@ -25,7 +25,7 @@ public class EmergencyExit extends TourActivity {
         }
 
         //isi detail dari ruangan ini, misal nama tempat ini = Contoh Tour
-        setActivityDetail("Corridor 3 Right 2", "Corridor 3 Right 2 is a second right side of Building B Floor 3 Corridor.");
+        setActivityDetail("Emergency Exit Corridor", "Corridor 3 Right 2 is a second right side of Building B Floor 3 Corridor.");
 
         //code untuk bikin button programmatically
         ImageButton btnToEmergency = new ImageButton(this);
@@ -39,7 +39,7 @@ public class EmergencyExit extends TourActivity {
         //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
         //komen diatas itu contoh batas panjang kata2nya
         btnToEmergency.setId(View.generateViewId());
-        details.put(btnToEmergency.getId(), "This is the way to go to the Corridor 3 Left 1.");
+        details.put(btnToEmergency.getId(), "This is the way to enter the Emergency Exit.");
         btnToEmergency.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

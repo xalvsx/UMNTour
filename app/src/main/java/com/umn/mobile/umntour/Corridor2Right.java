@@ -26,7 +26,7 @@ public class Corridor2Right extends TourActivity {
         }
 
         //isi detail dari ruangan ini, misal nama tempat ini = Contoh Tour
-        setActivityDetail("Corridor 2 Right", "Room Example is a room that basically used by student to do many activities like meeting, UKM, etc.");
+        setActivityDetail("2nd Floor Right Corridor", "This is the way to go to Mushola, Toilet and Balcony.");
 
         //code untuk bikin button programmatically
         ImageButton btnToEmergencyExit = new ImageButton(this);

@@ -39,11 +39,11 @@ public class ServerBridge extends TourActivity {
         //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
         //komen diatas itu contoh batas panjang kata2nya
         btnToServer.setId(View.generateViewId());
-        details.put(btnToServer.getId(), "This is the way to go to the Corridor 3 Left 1.");
+        details.put(btnToServer.getId(), "UMN IT infrastructure room");
         btnToServer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showOtherWayDetail("Server Room","gk boleh masuk");
+                showOtherWayDetail("Server Room","Restricted area");
             }
         });
         //end code button programmatically
@@ -81,7 +81,7 @@ public class ServerBridge extends TourActivity {
         //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
         //komen diatas itu contoh batas panjang kata2nya
         btnToEmergencyExit.setId(View.generateViewId());
-        details.put(btnToEmergencyExit.getId(), "This is the way to go to the Corridor 3 Left 1.");
+        details.put(btnToEmergencyExit.getId(), "This is the way to go to the emergency Exit corridor");
         btnToEmergencyExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -100,7 +100,7 @@ public class ServerBridge extends TourActivity {
         btnToBridge.setLayoutParams(lp4);
         layout.addView(btnToBridge);
         btnToBridge.setId(View.generateViewId());
-        details.put(btnToBridge.getId(), "This is the way to the Room B315.");
+        details.put(btnToBridge.getId(), "This is the way to connecting bridge to A building");
         btnToBridge.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
