@@ -25,7 +25,6 @@ public class Corridor2Left2 extends TourActivity {
             iv.setImageResource(R.drawable.selasar2_kiri2_night);
         }
 
-        //isi detail dari ruangan ini, misal nama tempat ini = Contoh Tour
         setActivityDetail("2nd Floor Left Corridor", "The way to go to 2nd floor Classroom.");
 
         //code untuk bikin button programmatically
@@ -36,8 +35,6 @@ public class Corridor2Left2 extends TourActivity {
         lp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
         btnToCorridor2Left1.setLayoutParams(lp);
         layout.addView(btnToCorridor2Left1);
-        //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
-        //komen diatas itu contoh batas panjang kata2nya
         btnToCorridor2Left1.setId(View.generateViewId());
         btnBack = btnToCorridor2Left1;
         btnToCorridor2Left1.setOnClickListener(new View.OnClickListener() {
@@ -58,8 +55,6 @@ public class Corridor2Left2 extends TourActivity {
             lp2.setMarginEnd(getdp(123));
             btnToB201.setLayoutParams(lp2);
             layout.addView(btnToB201);
-            //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
-            //komen diatas itu contoh batas panjang kata2nya
             btnToB201.setId(View.generateViewId());
             details.put(btnToB201.getId(), "This is the way to go to the Room B201.");
             btnToB201.setOnClickListener(new View.OnClickListener() {
@@ -79,8 +74,6 @@ public class Corridor2Left2 extends TourActivity {
             lp3.setMarginStart(getdp(82));
             btnToB202.setLayoutParams(lp3);
             layout.addView(btnToB202);
-            //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
-            //komen diatas itu contoh batas panjang kata2nya
             btnToB202.setId(View.generateViewId());
             details.put(btnToB202.getId(), "This is the way to go to the Room B202.");
             btnToB202.setOnClickListener(new View.OnClickListener() {

@@ -25,11 +25,7 @@ public class Corridor3Right2 extends TourActivity {
             iv.setImageResource(R.drawable.selasar3_kanan2_night);
         }
 
-
-        //isi detail dari ruangan ini, misal nama tempat ini = Contoh Tour
         setActivityDetail("3rd Floor Right Corridor", "The way to go to 3nd floor Classroom and other rooms");
-
-
 
         //code untuk bikin button programmatically
         ImageButton btnToCorridor3Right1 = new ImageButton(this);
@@ -39,8 +35,6 @@ public class Corridor3Right2 extends TourActivity {
         lp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
         btnToCorridor3Right1.setLayoutParams(lp);
         layout.addView(btnToCorridor3Right1);
-        //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
-        //komen diatas itu contoh batas panjang kata2nya
         btnToCorridor3Right1.setId(View.generateViewId());
         btnBack = btnToCorridor3Right1;
         btnToCorridor3Right1.setOnClickListener(new View.OnClickListener() {

@@ -20,11 +20,11 @@ public class Balcony extends TourActivity {
         ImageView iv = (ImageView)findViewById(R.id.bgImage);
         if(isDay) {
             iv.setImageResource(R.drawable.balkon_lt2);
-            setActivityDetail("Balcony", "Balcony to see all activtivty on 1st floor");
+            setActivityDetail("Balcony", "Balcony to see all activity on 1st Floor Lobby");
         }
         else {
             iv.setImageResource(R.drawable.balkon_lt2_night);
-            setActivityDetail("Balcony", "Balcony to see all activtivty on 1st floor");
+            setActivityDetail("Balcony", "Balcony to see all activity on 1st Floor Lobby");
         }
 
         //code untuk bikin button programmatically
@@ -35,11 +35,8 @@ public class Balcony extends TourActivity {
         lp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
         btnToCorridor2Right.setLayoutParams(lp);
         layout.addView(btnToCorridor2Right);
-        //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
-        //komen diatas itu contoh batas panjang kata2nya
         btnToCorridor2Right.setId(View.generateViewId());
         btnBack = btnToCorridor2Right;
-        //details.put(btnToCorridor3Right.getId(), "This is the way to go to the Corridor 3 Right.");
         btnToCorridor2Right.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -24,7 +24,6 @@ public class Toilet2 extends TourActivity {
             iv.setImageResource(R.drawable.toilet_lt2_night);
         }
 
-        //isi detail dari ruangan ini, misal nama tempat ini = Contoh Tour
         setActivityDetail("2nd Floor Toilet", "Public sanitation facilties, complete wih closet, washtafel, clean water supply and other hygienic equipment.");
 
         //code untuk bikin button programmatically
@@ -37,8 +36,6 @@ public class Toilet2 extends TourActivity {
         lp.setMargins(0, 0, 0, getdp(25));
         btnToCorridorBack2.setLayoutParams(lp);
         layout.addView(btnToCorridorBack2);
-        //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
-        //komen diatas itu contoh batas panjang kata2nya
         btnToCorridorBack2.setId(View.generateViewId());
         btnBack = btnToCorridorBack2;
         btnToCorridorBack2.setOnClickListener(new View.OnClickListener() {

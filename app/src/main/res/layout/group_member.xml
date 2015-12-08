@@ -22,10 +22,10 @@
         <FrameLayout android:layout_weight="1"
             android:padding="10dp">
             <ImageView
-                android:layout_width="480px"
+                android:layout_width="550px"
                 android:layout_height="270px"
                 android:scaleType="fitXY"
-                android:background="@drawable/cwallpaper"
+                android:background="@drawable/group_member"
                 android:layout_gravity="center"/>
         </FrameLayout>
     </TableRow>

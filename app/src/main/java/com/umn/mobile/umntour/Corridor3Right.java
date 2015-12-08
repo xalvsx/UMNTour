@@ -25,7 +25,6 @@ public class Corridor3Right extends TourActivity {
             iv.setImageResource(R.drawable.selasar3_kanan_night);
         }
 
-        //isi detail dari ruangan ini, misal nama tempat ini = Contoh Tour
         setActivityDetail("3rd Floor Right Corridor", "The way to go to 3nd floor Classroom and other rooms.");
 
 
@@ -41,7 +40,7 @@ public class Corridor3Right extends TourActivity {
             btnToB311.setLayoutParams(lp);
             layout.addView(btnToB311);
             btnToB311.setId(View.generateViewId());
-            details.put(btnToB311.getId(), "This is the B311 Classroom.");
+            details.put(btnToB311.getId(), "This is the way to the B311 Classroom.");
             btnToB311.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -71,7 +70,7 @@ public class Corridor3Right extends TourActivity {
         //end code button programmatically
 
         ImageButton btnToEmergencyExit = new ImageButton(this);
-        btnToEmergencyExit.setBackgroundResource(R.drawable.orange_arrow_left);
+        btnToEmergencyExit.setBackgroundResource(R.drawable.arrow_left);
         RelativeLayout.LayoutParams lp3 = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         lp3.addRule(RelativeLayout.ALIGN_PARENT_START);
         lp3.addRule(RelativeLayout.CENTER_VERTICAL);
@@ -83,7 +82,7 @@ public class Corridor3Right extends TourActivity {
         btnToEmergencyExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showOtherWayDetail("The Emergency Exit","This is the way to the Emergency Exit.");
+                showOtherWayDetail("The Emergency Exit","This is the way to the Emergency Exit. (Currently no photo available)");
             }
         });
         //end code button programmatically

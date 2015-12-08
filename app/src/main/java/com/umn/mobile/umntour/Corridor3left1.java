@@ -24,7 +24,6 @@ public class Corridor3left1 extends TourActivity {
             iv.setImageResource(R.drawable.selasar3_kiri1_night);
         }
 
-        //isi detail dari ruangan ini, misal nama tempat ini = Contoh Tour
         setActivityDetail("3rd Floor Left Corridor", "The way to go to 3rd floor Classroom.");
 
         if(isDay){
@@ -37,8 +36,6 @@ public class Corridor3left1 extends TourActivity {
             lp.setMarginStart(getdp(209));
             btnToB304.setLayoutParams(lp);
             layout.addView(btnToB304);
-            //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
-            //komen diatas itu contoh batas panjang kata2nya
             btnToB304.setId(View.generateViewId());
             details.put(btnToB304.getId(), "This is the way to the Room B304.");
             btnToB304.setOnClickListener(new View.OnClickListener() {
@@ -59,8 +56,6 @@ public class Corridor3left1 extends TourActivity {
             lp2.setMargins(0, 0, 0, getdp(105));
             btnToCorridor3left2.setLayoutParams(lp2);
             layout.addView(btnToCorridor3left2);
-            //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
-            //komen diatas itu contoh batas panjang kata2nya
             btnToCorridor3left2.setId(View.generateViewId());
             details.put(btnToCorridor3left2.getId(), "This is the way to the next corridor.");
             btnToCorridor3left2.setOnClickListener(new View.OnClickListener() {
@@ -80,8 +75,6 @@ public class Corridor3left1 extends TourActivity {
             lp3.setMargins(0, 0, 0, getdp(10));
             btnToBackCorridor3Left.setLayoutParams(lp3);
             layout.addView(btnToBackCorridor3Left);
-            //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
-            //komen diatas itu contoh batas panjang kata2nya
             btnToBackCorridor3Left.setId(View.generateViewId());
             btnBack = btnToBackCorridor3Left;
             btnToBackCorridor3Left.setOnClickListener(new View.OnClickListener() {
@@ -102,8 +95,6 @@ public class Corridor3left1 extends TourActivity {
             lp2.setMargins(0, 0, 0, getdp(104));
             btnToCorridor3kiri2.setLayoutParams(lp2);
             layout.addView(btnToCorridor3kiri2);
-            //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
-            //komen diatas itu contoh batas panjang kata2nya
             btnToCorridor3kiri2.setId(View.generateViewId());
             details.put(btnToCorridor3kiri2.getId(), "This is the way to the next corridor.");
             btnToCorridor3kiri2.setOnClickListener(new View.OnClickListener() {
@@ -123,8 +114,6 @@ public class Corridor3left1 extends TourActivity {
             lp3.setMargins(0, 0, 0, getdp(10));
             btnToBackCorridor3Left.setLayoutParams(lp3);
             layout.addView(btnToBackCorridor3Left);
-            //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
-            //komen diatas itu contoh batas panjang kata2nya
             btnToBackCorridor3Left.setId(View.generateViewId());
             btnBack = btnToBackCorridor3Left;
             btnToBackCorridor3Left.setOnClickListener(new View.OnClickListener() {

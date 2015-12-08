@@ -530,7 +530,7 @@ public class TourActivity extends AppCompatActivity implements View.OnClickListe
             public void onAnimationStart(Animation animation) {}
             @Override
             public void onAnimationEnd(Animation animation) {
-                Snackbar snack = Snackbar.make(iv, "Navigating...", Snackbar.LENGTH_SHORT);
+                Snackbar snack = Snackbar.make(iv, "Navigating back...", Snackbar.LENGTH_SHORT);
                 ViewGroup group = (ViewGroup) snack.getView();
                 group.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), android.R.color.holo_blue_dark));
                 snack.show();

@@ -25,8 +25,6 @@ public class Corridor3Right1 extends TourActivity {
             iv.setImageResource(R.drawable.selasar3_kanan1_night);
         }
 
-
-        //isi detail dari ruangan ini, misal nama tempat ini = Contoh Tour
         setActivityDetail("3rd Floor Right Corridor", "The way to go to 3nd floor Classroom and other rooms");
 
         //code untuk bikin button programmatically

@@ -28,11 +28,7 @@ public class RoomB201 extends TourActivity {
             finish();
         }
 
-
-        //isi detail dari ruangan ini, misal nama tempat ini = Contoh Tour
-        setActivityDetail("Room B201", "Room B201 is a standard classroom and can be use as connecting room.");
-
-
+        setActivityDetail("Room B201", "Room B201 is a standard classroom and can be use as connecting room with Room B203.");
 
         //code untuk bikin button programmatically
         ImageButton btnToCorridor2Left2 = new ImageButton(this);
@@ -42,11 +38,8 @@ public class RoomB201 extends TourActivity {
         lp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
         btnToCorridor2Left2.setLayoutParams(lp);
         layout.addView(btnToCorridor2Left2);
-        //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
-        //komen diatas itu contoh batas panjang kata2nya
         btnToCorridor2Left2.setId(View.generateViewId());
         btnBack = btnToCorridor2Left2;
-        //details.put(btnToCorridor3Right.getId(), "This is the way to go to the Corridor 3 Right.");
         btnToCorridor2Left2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

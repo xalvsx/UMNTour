@@ -24,7 +24,6 @@ public class EmergencyExitDetail extends TourActivity {
             iv.setImageResource(R.drawable.tangga_darurat_dalem_night);
         }
 
-        //isi detail dari ruangan ini, misal nama tempat ini = Contoh Tour
         setActivityDetail("Emergency Exit", "Corridor 3 Right 2 is a second right side of Building B Floor 3 Corridor.");
 
         //code untuk bikin button programmatically
@@ -35,8 +34,6 @@ public class EmergencyExitDetail extends TourActivity {
         lp2.addRule(RelativeLayout.CENTER_HORIZONTAL);
         btnToBack.setLayoutParams(lp2);
         layout.addView(btnToBack);
-        //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
-        //komen diatas itu contoh batas panjang kata2nya
         btnToBack.setId(View.generateViewId());
         btnBack = btnToBack;
         btnToBack.setOnClickListener(new View.OnClickListener() {

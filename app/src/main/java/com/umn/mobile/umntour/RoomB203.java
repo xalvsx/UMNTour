@@ -30,7 +30,7 @@ public class RoomB203 extends TourActivity {
 
 
         //isi detail dari ruangan ini, misal nama tempat ini = Contoh Tour
-        setActivityDetail("Room B203", "Room B203 is a standard classroom and can be use as connecting room.");
+        setActivityDetail("Room B203", "Room B203 is a standard classroom and can be use as connecting room with Room B201.");
 
 
 
@@ -42,11 +42,8 @@ public class RoomB203 extends TourActivity {
         lp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
         btnToCorridor2Left1.setLayoutParams(lp);
         layout.addView(btnToCorridor2Left1);
-        //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
-        //komen diatas itu contoh batas panjang kata2nya
         btnToCorridor2Left1.setId(View.generateViewId());
         btnBack = btnToCorridor2Left1;
-        //details.put(btnToCorridor3Right.getId(), "This is the way to go to the Corridor 3 Right.");
         btnToCorridor2Left1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

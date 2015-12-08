@@ -24,7 +24,6 @@ public class Bridge extends TourActivity {
             iv.setImageResource(R.drawable.b_ke_a_night);
         }
 
-        //isi detail dari ruangan ini, misal nama tempat ini = Contoh Tour
         setActivityDetail("Bridge to A Building", "A shortcut path to the A Bulding.");
 
         ImageButton btnToBack = new ImageButton(this);

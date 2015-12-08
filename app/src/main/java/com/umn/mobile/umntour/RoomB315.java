@@ -28,11 +28,7 @@ public class RoomB315 extends TourActivity {
             finish();
         }
 
-
-        //isi detail dari ruangan ini, misal nama tempat ini = Contoh Tour
         setActivityDetail("Room B315", "Room B315 is a standard classroom with a very good view on day.");
-
-
 
         //code untuk bikin button programmatically
         ImageButton btnToCorridor3Right2 = new ImageButton(this);
@@ -42,8 +38,6 @@ public class RoomB315 extends TourActivity {
         lp.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
         btnToCorridor3Right2.setLayoutParams(lp);
         layout.addView(btnToCorridor3Right2);
-        //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
-        //komen diatas itu contoh batas panjang kata2nya
         btnToCorridor3Right2.setId(View.generateViewId());
         btnBack = btnToCorridor3Right2;
         btnToCorridor3Right2.setOnClickListener(new View.OnClickListener() {

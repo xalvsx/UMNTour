@@ -24,7 +24,6 @@ public class Corridor3left extends TourActivity {
             iv.setImageResource(R.drawable.selasar3_kiri_night);
         }
 
-        //isi detail dari ruangan ini, misal nama tempat ini = Contoh Tour
         setActivityDetail("3rd Floor Left Corridor", "The way to go to 3rd floor Classroom.");
 
         if(isDay){
@@ -37,8 +36,6 @@ public class Corridor3left extends TourActivity {
             lp.setMarginEnd(getdp(250));
             btnToCorridor3kiri1.setLayoutParams(lp);
             layout.addView(btnToCorridor3kiri1);
-            //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
-            //komen diatas itu contoh batas panjang kata2nya
             btnToCorridor3kiri1.setId(View.generateViewId());
             details.put(btnToCorridor3kiri1.getId(), "This is the way to the next corridor.");
             btnToCorridor3kiri1.setOnClickListener(new View.OnClickListener() {
@@ -59,8 +56,6 @@ public class Corridor3left extends TourActivity {
             lp2.setMargins(0,0,0, getdp(8));
             btnToBacklt3.setLayoutParams(lp2);
             layout.addView(btnToBacklt3);
-            //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
-            //komen diatas itu contoh batas panjang kata2nya
             btnToBacklt3.setId(View.generateViewId());
             btnBack = btnToBacklt3;
             btnToBacklt3.setOnClickListener(new View.OnClickListener() {
@@ -81,8 +76,6 @@ public class Corridor3left extends TourActivity {
             lp.setMargins(0, 0, 0, getdp(142));
             btnToCorridor3kiri1.setLayoutParams(lp);
             layout.addView(btnToCorridor3kiri1);
-            //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
-            //komen diatas itu contoh batas panjang kata2nya
             btnToCorridor3kiri1.setId(View.generateViewId());
             details.put(btnToCorridor3kiri1.getId(), "This is the way to the next corridor.");
             btnToCorridor3kiri1.setOnClickListener(new View.OnClickListener() {
@@ -103,8 +96,6 @@ public class Corridor3left extends TourActivity {
             lp2.setMargins(0,0,0, getdp(8));
             btnToBacklt3.setLayoutParams(lp2);
             layout.addView(btnToBacklt3);
-            //details.put(btnToCorridorExample.getId(), "Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest Lorem Ipsum is a simple dummy text Ini adalah lokasi btnTest");
-            //komen diatas itu contoh batas panjang kata2nya
             btnToBacklt3.setId(View.generateViewId());
             btnBack = btnToBacklt3;
             btnToBacklt3.setOnClickListener(new View.OnClickListener() {

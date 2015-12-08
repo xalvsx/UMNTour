@@ -25,11 +25,7 @@ public class StudentLounge extends TourActivity {
             iv.setImageResource(R.drawable.student_lounge_night);
         }
 
-
-        //isi detail dari ruangan ini, misal nama tempat ini = Contoh Tour
         setActivityDetail("Student Lounge", "Student Lounge is a place for student to gather.");
-
-
 
         //code untuk bikin button programmatically
         ImageButton btnToCorridor3Right1 = new ImageButton(this);
