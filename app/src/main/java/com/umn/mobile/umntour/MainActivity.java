@@ -87,7 +87,8 @@ public class MainActivity extends AppCompatActivity {
         LinearLayout.LayoutParams ttl = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
 
         ImageView ivGroup = new ImageView(this);
-        ivGroup.setImageResource(R.drawable.umntour);
+        ivGroup.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        ivGroup.setImageResource(R.drawable.about_app);
         lay.addView(ivGroup);
 
         final DialogPlus dialog = DialogPlus.newDialog(this)

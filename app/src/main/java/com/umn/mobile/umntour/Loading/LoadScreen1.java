@@ -29,7 +29,7 @@ public class LoadScreen1 extends AppCompatActivity {
         fadeInOffset = 500;
         fadeOutOffset = 1500;
         className = LoadScreen2.class.getName();
-        iv.setImageResource(R.drawable.umntour);
+        iv.setImageResource(R.drawable.splash1);
     }
 
     @Override
